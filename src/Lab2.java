@@ -95,7 +95,8 @@ public class Lab2 {
     public static void main(String[] args) {
         if (args.length >= 2) {
             usageInfo();
-        } else {
+        }
+        else {
             try {
                 BufferedReader r;
                 if (args.length == 0) {
