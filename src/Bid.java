@@ -1,4 +1,4 @@
 public class Bid {
-    public Bid(int ) {
+    public Bid( ) {
     }
 }
