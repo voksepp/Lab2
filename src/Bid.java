@@ -1,4 +1,3 @@
-public class Bid {
-    public Bid( ) {
-    }
+public interface Bid {
+
 }
