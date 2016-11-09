@@ -42,7 +42,7 @@ public class Lab2 {
                 // m.group(1): The name of the buyer/seller.
                 // m.group(2): K or S.
                 // m.group(3): The value.
-                return new Bid(...);  // Incomplete code.
+                return new Bid(...);  // Incomplete code. ...
             }
         } else {
             throw new MalformedBid(s);
