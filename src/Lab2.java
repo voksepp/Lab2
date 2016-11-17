@@ -92,6 +92,8 @@ public class Lab2 {
      */
 
     public static void main(String[] args) {
+        Bid Hannabid = new Bid("Hanna", "S", 50);
+        System.out.println(Hannabid.getValue());
         if (args.length >= 2) {
             usageInfo();
         }
