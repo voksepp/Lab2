@@ -91,11 +91,16 @@ public class Lab2 {
      * ...
      */
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException{
         BuyComparator buyComparator = new BuyComparator();
         SellComparator sellComparator = new SellComparator();
         PriorityQueue BuyPriorityQueue = new PriorityQueue(buyComparator);
         PriorityQueue SellPriorityQueue = new PriorityQueue(sellComparator);
+
+        File file = new File("bids.txt");
+        Scanner sc = new Scanner(file);
+        System.out.println(sc.nextLine());
+
         if (args.length >= 2) {
             usageInfo();
         }

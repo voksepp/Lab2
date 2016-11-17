@@ -7,8 +7,9 @@ import java.util.Map;
 public class PriorityQueue<E> {
 
     private ArrayList<E> binaryHeap = new ArrayList<E>();
-    private Map<String, Integer> placeMap;
     private Comparator<? super E> cmp;
+
+    //private Map<String, Integer> placeMap;
 
     public PriorityQueue (Comparator<? super E> cmp){
         this.cmp=cmp;
