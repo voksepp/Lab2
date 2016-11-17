@@ -41,12 +41,4 @@ public class PriorityQueue<E> {
 
         }
     }
-
-    //public ArrayList<Bid> getSellist() {
-        //return Sellist;
-    //}
-
-    //public ArrayList<Bid> getBuyList(){
-        //return BuyList;
-    //}
 }
