@@ -15,30 +15,12 @@ public class PriorityQueue<E> {
     }
 
     public void insert(E bid) {
-        for(int insertAt = 0; insertAt < binaryHeap.size(); insertAt++) {
+        int insertAt;
+        for(insertAt = 0; insertAt < binaryHeap.size(); insertAt++) {
             if(cmp.compare(bid, binaryHeap.get(insertAt)) > 0) {
                 break;
             }
         }
-        binaryHeap.add(insBefore, bid);
-    }
-
-    private void shiftUp(){
-        int k = binaryHeap.size() - 1;
-        while (k>0){
-            int p = (k-1)/2;
-            E item = binaryHeap.get(k);
-            E parent = binaryHeap.get(p);
-            if(/*item.compareTo(parent) > 0*/) {
-                //swap
-                binaryHeap.set(k,parent);
-                binaryHeap.set(p,item);
-                //move up one level
-                k=p;
-            } else{
-                break;
-            }
-
-        }
+        binaryHeap.add(insertAt, bid);
     }
 }

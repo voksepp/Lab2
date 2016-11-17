@@ -92,11 +92,10 @@ public class Lab2 {
      */
 
     public static void main(String[] args) {
-        System.out.println(Hannabid.getValue());
-        BidComparator bidComparator = new BidComparator();
-        PriorityQueue sortedPriorityQueue = new PriorityQueue(bidComparator);
-        Bid Hannabid = new Bid("Hanna", "S", 50);
-
+        BuyComparator buyComparator = new BuyComparator();
+        SellComparator sellComparator = new SellComparator();
+        PriorityQueue BuyPriorityQueue = new PriorityQueue(buyComparator);
+        PriorityQueue SellPriorityQueue = new PriorityQueue(sellComparator);
         if (args.length >= 2) {
             usageInfo();
         }
