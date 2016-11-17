@@ -2,8 +2,13 @@ import java.util.Comparator;
 
 public class BidComparator implements Comparator<Bid>{
 
-    @Override
-    public int compare(Bid o1, Bid o2) {
-        return o1.getValue() - o2.getValue();
+    public int compare(Bid a, Bid b) {
+        if(a.getValue() < b.getValue()) {
+            return -1;
+        } else if(a.getValue() > b.getValue()) {
+            return 1;
+        } else {
+            return 0;
+        }
     }
 }

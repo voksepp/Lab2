@@ -92,8 +92,11 @@ public class Lab2 {
      */
 
     public static void main(String[] args) {
-        Bid Hannabid = new Bid("Hanna", "S", 50);
         System.out.println(Hannabid.getValue());
+        BidComparator bidComparator = new BidComparator();
+        PriorityQueue sortedPriorityQueue = new PriorityQueue(bidComparator);
+        Bid Hannabid = new Bid("Hanna", "S", 50);
+
         if (args.length >= 2) {
             usageInfo();
         }

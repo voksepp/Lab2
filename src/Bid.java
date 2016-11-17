@@ -1,4 +1,6 @@
-public class Bid {
+import java.util.Comparator;
+
+public class Bid /*implements Comparator<Bid>*/ {
     private final String name;
     private final int value;
     private final int oldValue;
