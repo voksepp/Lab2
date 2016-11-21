@@ -24,4 +24,30 @@ public class PriorityQueue<E> {
         }
         binaryHeap.add(insertAt, bid);
     }
+
+    protected void bubbleDown() {
+        int index = 1;
+
+        // bubble down
+        while (hasLeftChild(index)) {
+            // which of my children is smaller?
+            int smallerChild = leftIndex(index);
+
+            // bubble with the smaller child, if I have a smaller child
+            if (hasRightChild(index)
+                    && array[leftIndex(index)].compareTo(array[rightIndex(index)]) > 0) {
+                smallerChild = rightIndex(index);
+            }
+
+            if (array[index].compareTo(array[smallerChild]) > 0) {
+                swap(index, smallerChild);
+            } else {
+                // otherwise, get outta here!
+                break;
+            }
+
+            // make sure to update loop counter/index of where last el is put
+            index = smallerChild;
+        }
+    }
 }
