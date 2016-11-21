@@ -90,6 +90,7 @@ public class PriorityQueue<E> {
     }
     public E pop(){
         E temp = binaryHeap.get(0);
+        placeMap.remove(binaryHeap.get(0));
         binaryHeap.remove(0);
         return temp;
     }
