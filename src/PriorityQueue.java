@@ -30,7 +30,8 @@ public class PriorityQueue<E> {
 
     /**
      *
-     * @param
+     * @param o
+     * @param n
      */
     public void replace(E o, E n){
         int i = binaryHeap.indexOf(o);
@@ -49,6 +50,10 @@ public class PriorityQueue<E> {
         }
     }
 
+    /**
+     *
+     * @param i
+     */
     private void heapify(int i) {
         int left = leftChild(i);
         int right = rightChild(i);
@@ -68,10 +73,19 @@ public class PriorityQueue<E> {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public E removeFirst(){
         return removeElement(0);
     }
 
+    /**
+     *
+     * @param i
+     * @return
+     */
     private E removeElement(int i){
         swap (i, binaryHeap.size()-1);
         E temp = binaryHeap.remove(binaryHeap.size()-1);
