@@ -31,6 +31,13 @@ public class PriorityQueue<E> {
         binaryHeap.add(insertAt, e);
     }
 
+    private void bubbleUp(int cur) {
+        while(cur > 0 && heap.get(parent(cur)).compareTo(heap.get(cur)) < 0) {
+            swap(cur, parent(cur));
+            cur = parent(cur);
+        }
+    }
+
     private void swap(int i1, int i2){
         E e1 = binaryHeap.get(i1);
         E e2 = binaryHeap.get(i2);
