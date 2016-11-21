@@ -75,7 +75,6 @@ public class PriorityQueue<E> {
             // make sure to update loop counter/index of where last el is put
             index = smallerChild;
         }*/
-    }
     private int parent(int i) {
         return (i - 1) / 2;
     }
