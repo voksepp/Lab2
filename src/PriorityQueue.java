@@ -21,26 +21,6 @@ public class PriorityQueue<E> {
         bubbleUp(binaryHeap.size() - 1);
     }
 
-    public void bubbleUp(int index){
-        while(index > 0 && cmp.compare(binaryHeap.get(index), binaryHeap.get(parent(index))) > 0) {
-            swap(index, parent(index));
-            index = parent(index);
-        }
-    }
-
-
-
-    private void swap(int i1, int i2){
-        E e1 = binaryHeap.get(i1);
-        E e2 = binaryHeap.get(i2);
-
-        placeMap.replace(e1, i2);
-        placeMap.replace(e2, i1);
-
-        binaryHeap.set(i1, e2);
-        binaryHeap.set(i2, e1);
-    }
-
     public E extract(E bid) {
         int extractAt;
         for (extractAt = binaryHeap.size(); extractAt > 0; extractAt--) {
@@ -51,30 +31,22 @@ public class PriorityQueue<E> {
         return binaryHeap.get(extractAt);
     }
 
+    public void bubbleUp(int index){
+        while(index > 0 && cmp.compare(binaryHeap.get(index), binaryHeap.get(parent(index))) > 0) {
+            swap(index, parent(index));
+            index = parent(index);
+        }
+    }
+    private void swap(int i1, int i2){
+        E e1 = binaryHeap.get(i1);
+        E e2 = binaryHeap.get(i2);
 
-        /*int index = 1;
+        placeMap.replace(e1, i2);
+        placeMap.replace(e2, i1);
 
-        // bubble down
-        while (hasLeftChild(index)) {
-            // which of my children is smaller?
-            int smallerChild = leftIndex(index);
-
-            // bubble with the smaller child, if I have a smaller child
-            if (hasRightChild(index)
-                    && array[leftIndex(index)].compareTo(array[rightIndex(index)]) > 0) {
-                smallerChild = rightIndex(index);
-            }
-
-            if (array[index].compareTo(array[smallerChild]) > 0) {
-                swap(index, smallerChild);
-            } else {
-                // otherwise, get outta here!
-                break;
-            }
-
-            // make sure to update loop counter/index of where last el is put
-            index = smallerChild;
-        }*/
+        binaryHeap.set(i1, e2);
+        binaryHeap.set(i2, e1);
+    }
     private int parent(int i) {
         return (i - 1) / 2;
     }
