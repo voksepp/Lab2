@@ -9,13 +9,13 @@ public class PriorityQueue<E> {
     private ArrayList<E> binaryHeap = new ArrayList<>();
     private Comparator<? super E> cmp;
 
-    //private Map<String, Integer> placeMap;
+    private Map<String, Integer> placeMap;
 
     public PriorityQueue (Comparator<? super E> cmp){
         this.cmp=cmp;
     }
 
-    public void insert(E bid) {
+    public void insert(Bid bid) {
         int insertAt;
         for(insertAt = 0; insertAt < binaryHeap.size(); insertAt++) {
             if(cmp.compare(bid, binaryHeap.get(insertAt)) > 0) {
@@ -23,6 +23,7 @@ public class PriorityQueue<E> {
             }
         }
         binaryHeap.add(insertAt, bid);
+        placeMap.put(bid.getName(),bid.getValue());
     }
 
     protected void bubbleDown() {

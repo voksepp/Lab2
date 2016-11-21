@@ -22,4 +22,7 @@ public class Bid /*implements Comparator<Bid>*/ {
     public int getValue() {
         return value;
     }
+    public String getName(){
+        return name;
+    }
 }
