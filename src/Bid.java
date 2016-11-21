@@ -1,5 +1,3 @@
-import java.util.Comparator;
-
 public class Bid {
     private final String name;
     private int value;

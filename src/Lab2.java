@@ -16,38 +16,38 @@ public class Lab2 {
     public static void trade(List<Bid> bids) {
         BuyComparator buyComparator = new BuyComparator();
         SellComparator sellComparator = new SellComparator();
-        PriorityQueue<Bid> buyPriorityQueue = new PriorityQueue(buyComparator);
-        PriorityQueue<Bid> sellPriorityQueue = new PriorityQueue(sellComparator);
+        PriorityQueue<Bid> buyPriorityQueue = new PriorityQueue<>(buyComparator);
+        PriorityQueue<Bid> sellPriorityQueue = new PriorityQueue<>(sellComparator);
 
         Map<String, Bid> bidMap = new HashMap<>();
 
         for (Bid b: bids){
-            if(b.getType().equals("K")) {
-                bidMap.put(b.getName(),b);
-                buyPriorityQueue.insert(b);
-            }
-            else if (b.getType().equals("S")) {
-                bidMap.put(b.getName(),b);
-                sellPriorityQueue.insert(b);
-            }
-            else if (b.getType().equals("NK")){
-                if(bidMap.containsKey(b.getName())) {
-                    Bid a = bidMap.get(b.getName());
-                    a.updateValue(b.getValue(),b.getOldValue());
-                    buyPriorityQueue.replace(bidMap.get(b.getName()),a);
-                }
-                else{
-                    System.out.println("Ogiltig ändring av bud, felaktigt namn");
-                }
-            }
-            else if (b.getType().equals("NS")){
-                if(bidMap.containsKey(b.getName())) {
-                    Bid a = bidMap.get(b.getName());
-                    a.updateValue(b.getValue(),b.getOldValue());
-                    sellPriorityQueue.replace(bidMap.get(b.getName()),a);
-                }
-                else
-                    System.out.println("Ogiltig ändring av bud, felaktigt namn");
+            switch (b.getType()) {
+                case "K":
+                    bidMap.put(b.getName(), b);
+                    buyPriorityQueue.insert(b);
+                    break;
+                case "S":
+                    bidMap.put(b.getName(), b);
+                    sellPriorityQueue.insert(b);
+                    break;
+                case "NK":
+                    if (bidMap.containsKey(b.getName())) {
+                        Bid a = bidMap.get(b.getName());
+                        a.updateValue(b.getValue(), b.getOldValue());
+                        buyPriorityQueue.replace(bidMap.get(b.getName()), a);
+                    } else {
+                        System.out.println("Ogiltig ändring av bud, felaktigt namn");
+                    }
+                    break;
+                case "NS":
+                    if (bidMap.containsKey(b.getName())) {
+                        Bid a = bidMap.get(b.getName());
+                        a.updateValue(b.getValue(), b.getOldValue());
+                        sellPriorityQueue.replace(bidMap.get(b.getName()), a);
+                    } else
+                        System.out.println("Ogiltig ändring av bud, felaktigt namn");
+                    break;
             }
 
             if(buyPriorityQueue.getSize() != 0 && sellPriorityQueue.getSize() != 0){
@@ -114,7 +114,7 @@ public class Lab2 {
      */
 
     public static List<Bid> parseBids(Readable input) throws MalformedBid {
-        ArrayList<Bid> bids = new ArrayList<Bid>();
+        ArrayList<Bid> bids = new ArrayList<>();
         Scanner s = new Scanner(input);
 
         while (s.hasNextLine()) {

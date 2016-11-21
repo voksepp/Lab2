@@ -6,9 +6,9 @@ import java.util.*;
  */
 public class PriorityQueue<E> {
 
-    private ArrayList<E> binaryHeap = new ArrayList<>();
-    private Comparator<? super E> cmp;
-    private Map<E, Integer> placeMap = new HashMap<>();
+    private final ArrayList<E> binaryHeap = new ArrayList<>();
+    private final Comparator<? super E> cmp;
+    private final Map<E, Integer> placeMap = new HashMap<>();
 
     /**
      * Constructor for the priority queue
@@ -42,7 +42,7 @@ public class PriorityQueue<E> {
      *
      * @param index
      */
-    public void bubbleUp(int index){
+    private void bubbleUp(int index){
         while(index > 0 && cmp.compare(binaryHeap.get(index), binaryHeap.get(parent(index))) > 0) {
             swap(index, parent(index));
             index = parent(index);
@@ -72,7 +72,7 @@ public class PriorityQueue<E> {
         return removeElement(0);
     }
 
-    public E removeElement(int i){
+    private E removeElement(int i){
         swap (i, binaryHeap.size()-1);
         E temp = binaryHeap.remove(binaryHeap.size()-1);
         heapify(i);
@@ -138,7 +138,7 @@ public class PriorityQueue<E> {
 
     @Override
     public String toString () {
-        String elements = new String();
+        String elements = "";
 
         while(binaryHeap.size() > 0)
             elements = elements + removeFirst().toString();
