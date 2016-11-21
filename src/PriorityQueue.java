@@ -31,7 +31,7 @@ public class PriorityQueue<E> {
         }
         else {
             binaryHeap.add(e);
-            placeMap.put(e,0);
+            placeMap.put(e,binaryHeap.indexOf(e));
         }
         bubbleUp(binaryHeap.size() - 1);
     }
