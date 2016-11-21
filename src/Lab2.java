@@ -13,8 +13,12 @@ public class Lab2 {
      */
 
     public static void trade(List<Bid> bids) {
-        // Implement this yourselves. Note that this file does not
-        // define a Bid class.
+        BuyComparator buyComparator = new BuyComparator();
+        SellComparator sellComparator = new SellComparator();
+        PriorityQueue BuyPriorityQueue = new PriorityQueue(buyComparator);
+        PriorityQueue SellPriorityQueue = new PriorityQueue(sellComparator);
+
+
     }
 
     /**
@@ -92,15 +96,6 @@ public class Lab2 {
      */
 
     public static void main(String[] args) throws FileNotFoundException{
-        BuyComparator buyComparator = new BuyComparator();
-        SellComparator sellComparator = new SellComparator();
-        PriorityQueue BuyPriorityQueue = new PriorityQueue(buyComparator);
-        PriorityQueue SellPriorityQueue = new PriorityQueue(sellComparator);
-
-        File file = new File("bids.txt");
-        Scanner sc = new Scanner(file);
-        System.out.println(sc.nextLine());
-
         if (args.length >= 2) {
             usageInfo();
         }
