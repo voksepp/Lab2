@@ -21,6 +21,7 @@ public class PriorityQueue<E> {
         bubbleUp(binaryHeap.size() - 1);
     }
 
+    //FIXME: Gör så att extract ändrar i placemap också
     public E extract(E bid) {
         int extractAt;
         for (extractAt = binaryHeap.size(); extractAt > 0; extractAt--) {
