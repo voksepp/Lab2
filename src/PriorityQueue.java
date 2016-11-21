@@ -38,30 +38,6 @@ public class PriorityQueue<E> {
         insert(n);
     }
 
-    public E removeElement(int index){
-        while (index <= (binaryHeap.size() - 1)) {
-            if(rightChild(index) != -1){
-                swap(index, rightChild(index));
-                index = rightChild(index);
-            }
-            else if (leftChild(index) != -1){
-                swap(index, leftChild(index));
-                index = leftChild(index);
-            }
-        }
-
-        int lastIndex = binaryHeap.size()-1;
-
-        E tmp = binaryHeap.get(lastIndex);
-
-        binaryHeap.remove(lastIndex);
-        placeMap.remove(tmp);
-
-        heapify(0);
-
-        return tmp;
-    }
-
     /**
      *
      * @param index
@@ -93,9 +69,13 @@ public class PriorityQueue<E> {
     }
 
     public E removeFirst(){
-        swap(0, binaryHeap.size()-1);
+        return removeElement(0)
+    }
+
+    public E removeElement(int i){
+        swap (i, binaryHeap.size()-1);
         E temp = binaryHeap.remove(binaryHeap.size()-1);
-        heapify(0);
+        heapify(i);
         return temp;
     }
 
