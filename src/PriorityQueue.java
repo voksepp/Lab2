@@ -34,8 +34,8 @@ public class PriorityQueue<E> {
      *
      * @param
      */
-    public void replace(E old, E n){
-        int i = binaryHeap.indexOf(old);
+    public void replace(E o, E n){
+        int i = binaryHeap.indexOf(o);
         extract(i);
         insert(n);
     }
