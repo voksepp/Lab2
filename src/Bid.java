@@ -32,13 +32,9 @@ public class Bid {
     public String getType(){
         return type;
     }
+    public void update
     @Override
     public String toString(){
         return name + " " + value + ", ";
     }
-    @Override
-    public boolean equals(Bid b){
-        return value == b.getOldValue();
-    }
-
 }

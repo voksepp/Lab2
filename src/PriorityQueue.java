@@ -33,10 +33,9 @@ public class PriorityQueue<E> {
     /**
      *
      * @param e
-     */
-    public void replace(E e){
-        if(){
-
+     */ //TODO: felhantering ändring av bud
+    public void update(E e){
+        if(e.get){
         }
         else{
             System.out.println("Felaktigt bud. Detta bud existerar ej!");

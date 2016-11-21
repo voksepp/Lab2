@@ -24,9 +24,9 @@ public class Lab2 {
             else if (b.getType().equals("B"))
                 sellPriorityQueue.insert(b);
             else if (b.getType().equals("NK"))
-                buyPriorityQueue.replace(b);
+                buyPriorityQueue.update(b);
             else if (b.getType().equals("NS"))
-                sellPriorityQueue.replace(b);
+                sellPriorityQueue.update(b);
         }
 
         ...
