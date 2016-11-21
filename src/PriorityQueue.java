@@ -70,15 +70,15 @@ public class PriorityQueue<E> {
      */
     //TODO: Jämföra barn osv
     public void bubbleDown(int index) {
-        while (index < binaryHeap.size()) {
+        while (index < binaryHeap.size() - 1) {
             if(rightChild(index) != -1){
-               if (cmp.compare(binaryHeap.get(leftChild(index)), binaryHeap.get(rightChild(index))) < 0){
+               if (cmp.compare(binaryHeap.get(leftChild(index)), binaryHeap.get(rightChild(index))) > 0){
                    if(cmp.compare(binaryHeap.get(index),binaryHeap.get(leftChild(index))) < 0){
                        swap(index, leftChild(index));
                        index = leftChild(index);
                    }
                }
-               else if (cmp.compare(binaryHeap.get(leftChild(index)), binaryHeap.get(rightChild(index))) > 0){
+               else if (cmp.compare(binaryHeap.get(leftChild(index)), binaryHeap.get(rightChild(index))) < 0){
                    if(cmp.compare(binaryHeap.get(index), binaryHeap.get(rightChild(index))) < 0){
                        swap(index, rightChild(index));
                        index = rightChild(index);
@@ -91,8 +91,11 @@ public class PriorityQueue<E> {
                     index = leftChild(index);
                 }
             }
-
+            else{
+                break;
+            }
         }
+
     }
 
     /**
