@@ -45,14 +45,14 @@ public class PriorityQueue<E> {
      * @param index
      * @return
      */
-    public E extract(int index) { //FIXME: fixa
+    public E extract(int index) {
         while (index < binaryHeap.size() - 1) {
             if(rightChild(index) != -1){
                 if (cmp.compare(binaryHeap.get(leftChild(index)), binaryHeap.get(rightChild(index))) > 0){
                         swap(index, leftChild(index));
                         index = leftChild(index);
                 }
-                else if (cmp.compare(binaryHeap.get(leftChild(index)), binaryHeap.get(rightChild(index))) < 0){
+                else if (cmp.compare(binaryHeap.get(leftChild(index)), binaryHeap.get(rightChild(index))) <= 0){
                         swap(index, rightChild(index));
                         index = rightChild(index);
                 }
@@ -65,7 +65,11 @@ public class PriorityQueue<E> {
                 break;
             }
         }
-        return binaryHeap.get(binaryHeap.size()-1);
+        int lastIndex = binaryHeap.size()-1;
+        E tmp = binaryHeap.get(lastIndex);
+        binaryHeap.remove(lastIndex);
+        placeMap.remove(binaryHeap.get(lastIndex));
+        return tmp;
 }
 
     /**
@@ -92,7 +96,7 @@ public class PriorityQueue<E> {
                        index = leftChild(index);
                    }
                }
-               else if (cmp.compare(binaryHeap.get(leftChild(index)), binaryHeap.get(rightChild(index))) < 0){
+               else if (cmp.compare(binaryHeap.get(leftChild(index)), binaryHeap.get(rightChild(index))) <= 0){
                    if(cmp.compare(binaryHeap.get(index), binaryHeap.get(rightChild(index))) < 0){
                        swap(index, rightChild(index));
                        index = rightChild(index);
