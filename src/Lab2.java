@@ -15,8 +15,8 @@ public class Lab2 {
     public static void trade(List<Bid> bids) {
         BuyComparator buyComparator = new BuyComparator();
         SellComparator sellComparator = new SellComparator();
-        PriorityQueue buyPriorityQueue = new PriorityQueue(buyComparator);
-        PriorityQueue sellPriorityQueue = new PriorityQueue(sellComparator);
+        PriorityQueue<Bid> buyPriorityQueue = new PriorityQueue(buyComparator);
+        PriorityQueue<Bid> sellPriorityQueue = new PriorityQueue(sellComparator);
 
         Map<String, Bid> bidMap = new HashMap<>();
 
@@ -50,7 +50,7 @@ public class Lab2 {
             }
         }
 
-        ...
+        sellPriorityQueue.peek().getValue()
 
         printOrderBook(buyPriorityQueue,sellPriorityQueue);
 
