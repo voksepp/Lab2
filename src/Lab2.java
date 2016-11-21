@@ -30,7 +30,7 @@ public class Lab2 {
                 sellPriorityQueue.insert(b);
             }
             else if (b.getType().equals("NK")){
-                if(bidMap.containsKey(b.getName()){
+                if(bidMap.containsKey(b.getName())) {
                     Bid a = bidMap.get(b.getName());
                     a.updateValue(b.getValue(),b.getOldValue());
                     buyPriorityQueue.replace(b,a);
@@ -40,7 +40,13 @@ public class Lab2 {
                 }
             }
             else if (b.getType().equals("NS")){
-                sellPriorityQueue.update(b);
+                if(bidMap.containsKey(b.getName())) {
+                    Bid a = bidMap.get(b.getName());
+                    a.updateValue(b.getValue(),b.getOldValue());
+                    sellPriorityQueue.replace(b,a);
+                }
+                else
+                    System.out.println("Ogiltig ändring av bud, felaktigt namn");
             }
         }
 
