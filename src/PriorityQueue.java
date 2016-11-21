@@ -25,10 +25,8 @@ public class PriorityQueue<E> {
      * @param e An object
      */
     public void insert(E e) {
-        if(binaryHeap.size() > 0) {
             binaryHeap.add(e);
             placeMap.put(e, binaryHeap.indexOf(e));
-        }
         bubbleUp(binaryHeap.indexOf(e));
     }
 
