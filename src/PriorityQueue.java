@@ -1,5 +1,3 @@
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 import java.util.*;
 
 /**
@@ -36,7 +34,7 @@ public class PriorityQueue<E> {
      */
     public void replace(E o, E n){
         int i = binaryHeap.indexOf(o);
-        extract(i);
+        removeFirst(i);
         insert(n);
     }
 
@@ -45,7 +43,7 @@ public class PriorityQueue<E> {
      * @param index
      * @return
      */
-    public E extract(int index) {
+    public E removeFirst(int index) {
         while (index < binaryHeap.size() - 1) {
             if(rightChild(index) != -1){
                 if (cmp.compare(binaryHeap.get(leftChild(index)), binaryHeap.get(rightChild(index))) > 0){
@@ -174,14 +172,14 @@ public class PriorityQueue<E> {
     }
 
     public E pop(){
-        return extract(0);
+        return removeFirst(0);
     }
     @Override
     public String toString () {
         String elements = new String();
 
         while(binaryHeap.size() > 0)
-            elements = elements + extract(0).toString();
+            elements = elements + removeFirst(0).toString();
 
         if(elements.length()<=2)
             return "";
