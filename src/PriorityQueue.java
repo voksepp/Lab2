@@ -32,11 +32,14 @@ public class PriorityQueue<E> {
     }
 
     private void swap(int i1, int i2){
-        placeMap.put(binaryHeap.get(i1), placeMap.get(binaryHeap.get(i2)));
-        placeMap.put(binaryHeap.get(i2), placeMap.get(binaryHeap.get(i1)));
-        E temp = binaryHeap.get(i1);
-        binaryHeap.set(i1, binaryHeap.get(i2));
-        binaryHeap.set(i2, temp);
+        E e1 = binaryHeap.get(i1);
+        E e2 = binaryHeap.get(i2);
+
+        placeMap.replace(e1, i2);
+        placeMap.replace(e2, i1);
+
+        binaryHeap.set(i1, e2);
+        binaryHeap.set(i2, e1);
 
     }
 
