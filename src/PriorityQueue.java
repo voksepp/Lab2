@@ -49,14 +49,16 @@ public class PriorityQueue<E> {
      * @return
      */
     public E extract(int index) { //FIXME: fixa
-        int extractAt;
+        bubbleDown(index);
+        return binaryHeap.get(binaryHeap.size()-1);
+        /*int extractAt;
         for (extractAt = binaryHeap.size(); extractAt > 0; extractAt--) {
             if (cmp.compare(bid, binaryHeap.get(extractAt)) > 0) {
                 break;
             }
         }
         placeMap.remove(bid,extractAt);
-        return binaryHeap.get(extractAt);
+        return binaryHeap.get(extractAt);*/
 
 
         /*
@@ -83,8 +85,10 @@ public class PriorityQueue<E> {
      *
      * @param index
      */
+    //TODO: Jämföra barn osv
     public void bubbleDown(int index){
-        while(index > 0 && cmp.compare(binaryHeap.get(index), binaryHeap.get(parent(index))) > 0) {
+        while(index < binaryHeap.size()) {
+
             swap(index, parent(index));
             index = parent(index);
         }
