@@ -69,7 +69,7 @@ public class PriorityQueue<E> {
     }
 
     public E removeFirst(){
-        return removeElement(0)
+        return removeElement(0);
     }
 
     public E removeElement(int i){
