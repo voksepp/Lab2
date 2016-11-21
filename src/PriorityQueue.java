@@ -33,7 +33,7 @@ public class PriorityQueue<E> {
     /**
      *
      * @param
-     */ //TODO: felhantering ändring av bud
+     */
     public void replace(E old, E n){
         int i = binaryHeap.indexOf(old);
         extract(i);
