@@ -18,17 +18,14 @@ public class PriorityQueue<E> {
     public void insert(E e) {
         binaryHeap.add(e);
         placeMap.put(e, binaryHeap.size() - 1);
-        bubbleUp(e);
+        bubbleUp(binaryHeap.size() - 1);
     }
 
-    public void bubbleUp(E e){
-        int insertAt;
-        for(insertAt = 0; insertAt < binaryHeap.size(); insertAt++) {
-            if(cmp.compare(e, binaryHeap.get(insertAt)) > 0) {
-                break;
-            }
+    public void bubbleUp(int index){
+        while(index > 0 && cmp.compare(binaryHeap.get(index),binaryHeap.get(parent(index))) > 0) {
+            swap(index, parent(index));
+            index = parent(index);
         }
-        binaryHeap.add(insertAt, e);
     }
 
     private void swap(int i1, int i2){
