@@ -186,7 +186,7 @@ public class PriorityQueue<E> {
     public String toString () {
         String elements = new String();
 
-        while(binaryHeap.size() != 0)
+        while(binaryHeap.size() > 0)
             elements = elements + extract(0).toString();
 
         if(elements.length()<=2)
