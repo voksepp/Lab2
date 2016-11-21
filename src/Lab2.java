@@ -28,6 +28,18 @@ public class Lab2 {
             else if (b.getType().equals("NS"))
                 sellPriorityQueue.replace(b);
         }
+
+        ...
+
+        printOrderBook(buyPriorityQueue,sellPriorityQueue);
+    }
+
+    private static void printOrderBook (PriorityQueue buyQueue, PriorityQueue sellQueue){
+        System.out.println("Orderbok;");
+        System.out.println("Säljare: " + sellQueue.toString());
+        System.out.println("Köpare: " + buyQueue.toString());
+
+
     }
 
     /**

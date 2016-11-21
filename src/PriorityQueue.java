@@ -129,4 +129,13 @@ public class PriorityQueue<E> {
         binaryHeap.remove(0);
         return temp;
     }
+
+    @Override
+    public String toString () {
+        String elements = new String();
+        for (E e: binaryHeap){
+            elements = elements + e.toString();
+        }
+        return elements.substring(0, elements.length() - 2);
+    }
 }
