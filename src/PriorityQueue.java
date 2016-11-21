@@ -26,7 +26,13 @@ public class PriorityQueue<E> {
         placeMap.put(E.toString(),E.getValue());
     }
 
-    public Bid extract() {
+    public Bid extract(E bid) {
+        for(int i = binaryHeap.size(); i <= 0; i--){
+            if(cmp.compare(bid, binaryHeap.get(i) > 0)){
+                break;
+            }
+        }
+        return binaryHeap.get(i);
 
 
         /*int index = 1;
