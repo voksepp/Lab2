@@ -15,8 +15,8 @@ public class Lab2 {
     public static void trade(List<Bid> bids) {
         BuyComparator buyComparator = new BuyComparator();
         SellComparator sellComparator = new SellComparator();
-        PriorityQueue BuyPriorityQueue = new PriorityQueue(buyComparator);
-        PriorityQueue SellPriorityQueue = new PriorityQueue(sellComparator);
+        PriorityQueue buyPriorityQueue = new PriorityQueue(buyComparator);
+        PriorityQueue sellPriorityQueue = new PriorityQueue(sellComparator);
 
 
     }
