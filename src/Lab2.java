@@ -18,6 +18,10 @@ public class Lab2 {
         PriorityQueue buyPriorityQueue = new PriorityQueue(buyComparator);
         PriorityQueue sellPriorityQueue = new PriorityQueue(sellComparator);
 
+        for (Bid b: bids){
+            if()
+                insert
+        }
 
     }
 
