@@ -16,8 +16,8 @@ public class PriorityQueue<E> {
     private Map<E, Integer> placeMap = new HashMap<>();
 
     /**
-     *
-     * @param cmp
+     * Constructor for the priority queue
+     * @param cmp The Comparator that will be used to determine the order of objects in the queue
      */
     public PriorityQueue (Comparator<? super E> cmp){
         this.cmp=cmp;
