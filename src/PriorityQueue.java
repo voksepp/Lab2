@@ -24,8 +24,8 @@ public class PriorityQueue<E> {
     }
 
     /**
-     *
-     * @param e
+     * This method inserts an object in the priority queue and places it in the appropriate position
+     * @param e An object
      */
     public void insert(E e) {
         binaryHeap.add(e);
