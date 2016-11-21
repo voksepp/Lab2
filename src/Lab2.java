@@ -9,7 +9,8 @@ import java.util.regex.*;
 public class Lab2 {
 
     /**
-     * ...
+     *
+     * @param bids
      */
 
     public static void trade(List<Bid> bids) {
