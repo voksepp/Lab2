@@ -48,7 +48,7 @@ public class PriorityQueue<E> {
      * @param bid
      * @return
      */
-    public E extract(E bid) {
+    public E extract(E bid) { //FIXME: fixa
         int extractAt;
         for (extractAt = binaryHeap.size(); extractAt > 0; extractAt--) {
             if (cmp.compare(bid, binaryHeap.get(extractAt)) > 0) {
