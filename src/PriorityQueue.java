@@ -45,10 +45,10 @@ public class PriorityQueue<E> {
 
     /**
      *
-     * @param bid
+     * @param index
      * @return
      */
-    public E extract(E bid) { //FIXME: fixa
+    public E extract(int index) { //FIXME: fixa
         int extractAt;
         for (extractAt = binaryHeap.size(); extractAt > 0; extractAt--) {
             if (cmp.compare(bid, binaryHeap.get(extractAt)) > 0) {
@@ -57,6 +57,14 @@ public class PriorityQueue<E> {
         }
         placeMap.remove(bid,extractAt);
         return binaryHeap.get(extractAt);
+
+
+
+        insert(binaryHeap.get(binaryHeap.size() - 1));
+        E temp = binaryHeap.remove(0);
+        placeMap.remove(temp);
+        bubbleDown(index);
+        return temp;
     }
 
     /**
@@ -132,18 +140,9 @@ public class PriorityQueue<E> {
         return binaryHeap.get(0);
     }
 
-    /**
-     *
-     * @return element at the front of the queue
-     */
     public E pop(){
-        insert(binaryHeap.get(binaryHeap.size() - 1));
-        E temp = binaryHeap.remove(binaryHeap.size() -1);
-        placeMap.remove(temp);
-        bubbleDown(0);
-        return temp;
+        return extract(0);
     }
-
     @Override
     public String toString () {
         String elements = new String();
