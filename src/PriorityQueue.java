@@ -92,11 +92,15 @@ public class PriorityQueue<E> {
         while (index < binaryHeap.size()) {
             if(rightChild(index) != -1){
                if (cmp.compare(binaryHeap.get(leftChild(index)), binaryHeap.get(rightChild(index))) > 0){
-
+                   swap(index, leftChild(index));
+                   index = leftChild(index);
+               }
+               else if (cmp.compare(binaryHeap.get(leftChild(index)), binaryHeap.get(rightChild(index))) < 0){
+                   swap(index, rightChild(index));
+                   index = rightChild(index);
                }
             }
-            swap(index, parent(index));
-            index = parent(index);
+
         }
     }
 
