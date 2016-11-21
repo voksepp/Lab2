@@ -28,6 +28,8 @@ public class PriorityQueue<E> {
         }
     }
 
+
+
     private void swap(int i1, int i2){
         E e1 = binaryHeap.get(i1);
         E e2 = binaryHeap.get(i2);
@@ -82,5 +84,13 @@ public class PriorityQueue<E> {
     }
     private int rightChild(int i) {
         return 2*i + 2;
+    }
+    public E peek(){
+        return binaryHeap.get(0);
+    }
+    public E pop(){
+        E temp = binaryHeap.get(0);
+        binaryHeap.remove(0);
+        return temp;
     }
 }
