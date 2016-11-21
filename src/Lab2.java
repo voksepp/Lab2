@@ -49,7 +49,7 @@ public class Lab2 {
                     System.out.println("Ogiltig ändring av bud, felaktigt namn");
             }
 
-            if(buyPriorityQueue.peek() != null || sellPriorityQueue.peek() != null){
+            if(buyPriorityQueue.getSize() != 0 || sellPriorityQueue.getSize() != 0){
                 if(buyPriorityQueue.peek().getValue() >= sellPriorityQueue.peek().getValue()){
                     Bid buy = buyPriorityQueue.pop();
                     Bid sell = sellPriorityQueue.pop();
@@ -68,7 +68,7 @@ public class Lab2 {
      * @param sellQueue
      */
     private static void printOrderBook (PriorityQueue buyQueue, PriorityQueue sellQueue){
-        System.out.println("Orderbok;");
+        System.out.println("Orderbok:");
         System.out.println("Säljare: " + sellQueue.toString());
         System.out.println("Köpare: " + buyQueue.toString());
     }

@@ -186,4 +186,7 @@ public class PriorityQueue<E> {
             return "";
         return elements.substring(0, elements.length() - 2);
     }
+    public int getSize () {
+        return binaryHeap.size();
+    }
 }
