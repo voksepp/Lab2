@@ -9,21 +9,21 @@ public class PriorityQueue<E> {
 
     private ArrayList<E> binaryHeap = new ArrayList<>();
     private Comparator<? super E> cmp;
-    private Map<String, Integer> placeMap = new HashMap<>();
+    private Map<E, Integer> placeMap = new HashMap<>();
 
     public PriorityQueue (Comparator<? super E> cmp){
         this.cmp=cmp;
     }
 
-    public void insert(E bid) {
+    public void insert(E e) {
         int insertAt;
         for(insertAt = 0; insertAt < binaryHeap.size(); insertAt++) {
-            if(cmp.compare(bid, binaryHeap.get(insertAt)) > 0) {
+            if(cmp.compare(e, binaryHeap.get(insertAt)) > 0) {
                 break;
             }
         }
-        binaryHeap.add(insertAt, bid);
-        placeMap.put(E.(),E.getValue());
+        binaryHeap.add(insertAt, e);
+        placeMap.put(e, binaryHeap.size() - 1);
     }
 
     public Bid extract() {
