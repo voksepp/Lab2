@@ -38,12 +38,7 @@ public class PriorityQueue<E> {
      * @param e
      */
     public void replace(E e){
-        if(){
 
-        }
-        else{
-            System.out.println("Felaktigt bud. Detta bud existerar ej!");
-        }
     }
 
     /**
@@ -100,8 +95,8 @@ public class PriorityQueue<E> {
 
     /**
      *
-     * @param i
-     * @return
+     * @param i index of parent
+     * @return index of the left child
      */
     private int leftChild(int i) {
         return 2*i + 1;
@@ -109,8 +104,8 @@ public class PriorityQueue<E> {
 
     /**
      *
-     * @param i
-     * @return
+     * @param i index of parent
+     * @return index of the right child
      */
     private int rightChild(int i) {
         return 2*i + 2;
@@ -118,7 +113,7 @@ public class PriorityQueue<E> {
 
     /**
      *
-     * @return
+     * @return element at the front of the queue
      */
     public E peek(){
         return binaryHeap.get(0);
@@ -126,7 +121,7 @@ public class PriorityQueue<E> {
 
     /**
      *
-     * @return
+     * @return element at the front of the queue
      */
     public E pop(){
         E temp = binaryHeap.get(0);

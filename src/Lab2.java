@@ -38,8 +38,6 @@ public class Lab2 {
         System.out.println("Orderbok;");
         System.out.println("Säljare: " + sellQueue.toString());
         System.out.println("Köpare: " + buyQueue.toString());
-
-
     }
 
     /**
