@@ -48,7 +48,6 @@ public class PriorityQueue<E> {
      * @param bid
      * @return
      */
-    //FIXME: Gör så att extract ändrar i placemap också
     public E extract(E bid) {
         int extractAt;
         for (extractAt = binaryHeap.size(); extractAt > 0; extractAt--) {
