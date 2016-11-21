@@ -126,17 +126,9 @@ public class PriorityQueue<E> {
      * @return element at the front of the queue
      */
     public E pop(){
-        E temp = binaryHeap.get(0);
-        placeMap.remove(binaryHeap.get(0));
-        binaryHeap.remove(0);
-        return temp;
-
-
-
-
-        for (E e : placeMap)
-        temp = placeMap.remove(bid);
-        placeMap.put(temp-1);
+        insert(binaryHeap.get(binaryHeap.size() - 1));
+        binaryHeap.remove(binaryHeap.size() -1);
+        bubbleDown(0);
     }
 
     @Override
