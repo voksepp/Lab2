@@ -107,7 +107,7 @@ public class PriorityQueue<E> {
                }
             }
             else if (leftChild(index) != -1){
-                if (cmp.compare(binaryHeap.get(index), binaryHeap.get(leftChild(index))) < 0){
+                if (cmp.compare(binaryHeap.get(index), binaryHeap.get(leftChild(index))) > 0){
                     swap(index, leftChild(index));
                     index = leftChild(index);
                 }
