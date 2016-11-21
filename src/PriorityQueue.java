@@ -34,7 +34,7 @@ public class PriorityQueue<E> {
      */
     public void replace(E o, E n){
         int i = binaryHeap.indexOf(o);
-        removeFirst(i);
+        removeFirst();
         insert(n);
     }
 
@@ -43,8 +43,9 @@ public class PriorityQueue<E> {
      * @param index
      * @return
      */
-    public E removeFirst(int index) {
-        while (index < binaryHeap.size() - 1) {
+    public E removeFirst() {
+        int index = 0;
+        while (index <= (binaryHeap.size() - 1)) {
             if(rightChild(index) != -1){
                 if (cmp.compare(binaryHeap.get(leftChild(index)), binaryHeap.get(rightChild(index))) > 0){
                         swap(index, leftChild(index));
