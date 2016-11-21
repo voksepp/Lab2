@@ -2,20 +2,20 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.Map;
 
 public class PriorityQueue<E> {
 
     private ArrayList<E> binaryHeap = new ArrayList<>();
     private Comparator<? super E> cmp;
-
-    private Map<String, Integer> placeMap;
+    private Map<String, Integer> placeMap = new HashMap<>();
 
     public PriorityQueue (Comparator<? super E> cmp){
         this.cmp=cmp;
     }
 
-    public void insert(Bid bid) {
+    public void insert(E bid) {
         int insertAt;
         for(insertAt = 0; insertAt < binaryHeap.size(); insertAt++) {
             if(cmp.compare(bid, binaryHeap.get(insertAt)) > 0) {
@@ -23,7 +23,7 @@ public class PriorityQueue<E> {
             }
         }
         binaryHeap.add(insertAt, bid);
-        placeMap.put(bid.getName(),bid.getValue());
+        placeMap.put(E.toString(),E.getValue());
     }
 
     protected void bubbleDown() {

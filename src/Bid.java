@@ -1,6 +1,6 @@
 import java.util.Comparator;
 
-public class Bid /*implements Comparator<Bid>*/ {
+public class Bid implements Obje {
     private final String name;
     private final int value;
     private final int oldValue;
