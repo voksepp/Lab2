@@ -33,8 +33,6 @@ public class PriorityQueue<E> {
         bubbleUp(binaryHeap.size() - 1);
     }
 
-
-
     /**
      *
      * @param bid
