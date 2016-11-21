@@ -87,10 +87,10 @@ public class PriorityQueue<E> {
     private int parent(int i) {
         return (i - 1) / 2;
     }
-    private int left(int i) {
+    private int leftChild(int i) {
         return 2*i + 1;
     }
-    private int right(int i) {
+    private int rightChild(int i) {
         return 2*i + 2;
     }
 }
