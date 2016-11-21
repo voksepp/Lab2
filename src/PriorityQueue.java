@@ -18,7 +18,7 @@ public class PriorityQueue<E> {
     public void insert(E e) {
         binaryHeap.add(e);
         placeMap.put(e, binaryHeap.size() - 1);
-        bubbleUp(binaryHeap.size() -1);
+        bubbleUp(binaryHeap.size() - 1);
     }
 
     public void ....{
