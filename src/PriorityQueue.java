@@ -90,7 +90,11 @@ public class PriorityQueue<E> {
     //TODO: Jämföra barn osv
     public void bubbleDown(int index) {
         while (index < binaryHeap.size()) {
+            if(rightChild(index) != -1){
+               if (cmp.compare(binaryHeap.get(leftChild(index)), binaryHeap.get(rightChild(index))) > 0){
 
+               }
+            }
             swap(index, parent(index));
             index = parent(index);
         }
