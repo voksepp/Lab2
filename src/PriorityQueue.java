@@ -48,9 +48,7 @@ public class PriorityQueue<E> {
      * @param index
      * @return
      */
-    public E extract(int index) { //FIXME: fixa
-        bubbleDown(index);
-        return binaryHeap.get(binaryHeap.size()-1);
+    public E extract(int index) { //FIXME: fixa;
         /*int extractAt;
         for (extractAt = binaryHeap.size(); extractAt > 0; extractAt--) {
             if (cmp.compare(bid, binaryHeap.get(extractAt)) > 0) {
@@ -88,7 +86,9 @@ public class PriorityQueue<E> {
     //TODO: Jämföra barn osv
     public void bubbleDown(int index){
         while(index < binaryHeap.size()) {
+            if (rightChild(index) ){
 
+            }
             swap(index, parent(index));
             index = parent(index);
         }
@@ -125,7 +125,10 @@ public class PriorityQueue<E> {
      * @return index of the left child
      */
     private int leftChild(int i) {
-        return 2*i + 1;
+        int childIndex = 2*i +1;
+        if(binaryHeap.size() >= childIndex)
+        return childIndex;
+        else return -1;
     }
 
     /**
@@ -134,7 +137,10 @@ public class PriorityQueue<E> {
      * @return index of the right child
      */
     private int rightChild(int i) {
-        return 2*i + 2;
+        int childIndex = 2*i + 2;
+        if(binaryHeap.size() >= childIndex)
+            return childIndex;
+        else return -1;
     }
 
     /**
