@@ -21,7 +21,7 @@ public class PriorityQueue<E> {
         bubbleUp(binaryHeap.size() - 1);
     }
 
-    public void ....{
+    public void bubbleUp(){
         int insertAt;
         for(insertAt = 0; insertAt < binaryHeap.size(); insertAt++) {
             if(cmp.compare(e, binaryHeap.get(insertAt)) > 0) {
@@ -51,12 +51,13 @@ public class PriorityQueue<E> {
 
     public E extract(E bid) {
         int extractAt;
-        for(extractAt = binaryHeap.size(); extractAt > 0; extractAt--){
-            if(cmp.compare(bid, binaryHeap.get(extractAt)) > 0){
+        for (extractAt = binaryHeap.size(); extractAt > 0; extractAt--) {
+            if (cmp.compare(bid, binaryHeap.get(extractAt)) > 0) {
                 break;
             }
         }
         return binaryHeap.get(extractAt);
+    }
 
 
         /*int index = 1;
