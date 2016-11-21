@@ -68,7 +68,6 @@ public class PriorityQueue<E> {
      *
      * @param index
      */
-    //TODO: Jämföra barn osv
     public void bubbleDown(int index) {
         while (index < binaryHeap.size() - 1) {
             if(rightChild(index) != -1){
