@@ -41,39 +41,26 @@ public class PriorityQueue<E> {
     public E removeElement(int index){
         while (index <= (binaryHeap.size() - 1)) {
             if(rightChild(index) != -1){
-                //if (cmp.compare(binaryHeap.get(leftChild(index)), binaryHeap.get(rightChild(index))) > 0){
                 swap(index, rightChild(index));
                 index = rightChild(index);
-               /* }
-                else if (cmp.compare(binaryHeap.get(leftChild(index)), binaryHeap.get(rightChild(index))) <= 0){
-                        swap(index, rightChild(index));
-                        index = rightChild(index);
-                }*/
             }
             else if (leftChild(index) != -1){
                 swap(index, leftChild(index));
                 index = leftChild(index);
             }
-            else{
-                break;
-            }
         }
+
         int lastIndex = binaryHeap.size()-1;
+
         E tmp = binaryHeap.get(lastIndex);
+
         binaryHeap.remove(lastIndex);
         placeMap.remove(tmp);
-        bubbleDown(0);
+
+        heapify(0);
+
         return tmp;
     }
-
-    /**
-     *
-     * @param
-     * @return
-     */
-    public E removeFirst() {
-        return removeElement(0);
-}
 
     /**
      *
@@ -86,37 +73,30 @@ public class PriorityQueue<E> {
         }
     }
 
-    /**
-     *bubbleDown takes the index of a bid and puts it in the correct position of the binary heap
-     * @param index the index of the bid
-     */
-    public void bubbleDown(int index) {
-        while (index < binaryHeap.size() - 1) {
-            if(rightChild(index) != -1){
-               if (cmp.compare(binaryHeap.get(leftChild(index)), binaryHeap.get(rightChild(index))) > 0){
-                   if(cmp.compare(binaryHeap.get(index),binaryHeap.get(leftChild(index))) < 0){
-                       swap(index, leftChild(index));
-                       index = leftChild(index);
-                   }
-               }
-               else if (cmp.compare(binaryHeap.get(leftChild(index)), binaryHeap.get(rightChild(index))) <= 0){
-                   if(cmp.compare(binaryHeap.get(index), binaryHeap.get(rightChild(index))) < 0){
-                       swap(index, rightChild(index));
-                       index = rightChild(index);
-                   }
-               }
-            }
-            else if (leftChild(index) != -1){
-                if (cmp.compare(binaryHeap.get(index), binaryHeap.get(leftChild(index))) > 0){
-                    swap(index, leftChild(index));
-                    index = leftChild(index);
-                }
-            }
-            else{
-                break;
-            }
-        }
+    private void heapify(int i) {
+        int left = leftChild(i);
+        int right = rightChild(i);
+        int min;
 
+        if ((left != -1) && cmp.compare(binaryHeap.get(left), binaryHeap.get(i)) > 0)
+            min = left;
+        else
+            min = i;
+
+        if ((right != -1) && cmp.compare(binaryHeap.get(right), binaryHeap.get(min)) > 0)
+            min = right;
+
+        if (min != i) {
+            swap(i, min);
+            heapify(min);
+        }
+    }
+
+    public E removeFirst(){
+        swap(0, binaryHeap.size()-1);
+        E temp = binaryHeap.remove(binaryHeap.size()-1);
+        heapify(0);
+        return temp;
     }
 
     /**
@@ -186,15 +166,6 @@ public class PriorityQueue<E> {
         if(elements.length()<=2)
             return "";
         return elements.substring(0, elements.length() - 2);
-
-        /*
-        for (E e: binaryHeap){
-            elements = elements + e.toString();
-        }
-        if(elements.length()<=2)
-            return "";
-        return elements.substring(0, elements.length() - 2);
-        */
     }
     public int getSize () {
         return binaryHeap.size();
