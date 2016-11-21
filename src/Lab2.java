@@ -19,10 +19,11 @@ public class Lab2 {
         PriorityQueue sellPriorityQueue = new PriorityQueue(sellComparator);
 
         for (Bid b: bids){
-            if()
-                insert
+            if(b.getType().equals("K"))
+                buyPriorityQueue.insert(b);
+            else if (b.getType().equals("B"))
+                sellPriorityQueue.insert(b);
         }
-
     }
 
     /**
