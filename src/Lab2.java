@@ -32,6 +32,7 @@ public class Lab2 {
         ...
 
         printOrderBook(buyPriorityQueue,sellPriorityQueue);
+
     }
 
     /**

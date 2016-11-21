@@ -130,6 +130,13 @@ public class PriorityQueue<E> {
         placeMap.remove(binaryHeap.get(0));
         binaryHeap.remove(0);
         return temp;
+
+
+
+
+        for (E e : placeMap)
+        temp = placeMap.remove(bid);
+        placeMap.put(temp-1);
     }
 
     @Override
