@@ -88,9 +88,27 @@ public class PriorityQueue<E> {
     //TODO: Jämföra barn osv
     public void bubbleDown(int index) {
         while (index < binaryHeap.size()) {
+            if(rightChild(index) != -1){
+               if (cmp.compare(binaryHeap.get(leftChild(index)), binaryHeap.get(rightChild(index))) < 0){
+                   if(cmp.compare(binaryHeap.get(index),binaryHeap.get(leftChild(index))) < 0){
+                       swap(index, leftChild(index));
+                       index = leftChild(index);
+                   }
+               }
+               else if (cmp.compare(binaryHeap.get(leftChild(index)), binaryHeap.get(rightChild(index))) > 0){
+                   if(cmp.compare(binaryHeap.get(index), binaryHeap.get(rightChild(index))) < 0){
+                       swap(index, rightChild(index));
+                       index = rightChild(index);
+                   }
+               }
+            }
+            else if (leftChild(index) != -1){
+                if (cmp.compare(binaryHeap.get(index), binaryHeap.get(leftChild(index))) < 0){
+                    swap(index, leftChild(index));
+                    index = leftChild(index);
+                }
+            }
 
-            swap(index, parent(index));
-            index = parent(index);
         }
     }
 
@@ -125,7 +143,10 @@ public class PriorityQueue<E> {
      * @return index of the left child
      */
     private int leftChild(int i) {
-        return 2*i + 1;
+        int childIndex = 2*i + 1;
+        if(binaryHeap.size() >= childIndex)
+            return childIndex;
+        else return -1;
     }
 
     /**
@@ -134,7 +155,10 @@ public class PriorityQueue<E> {
      * @return index of the right child
      */
     private int rightChild(int i) {
-        return 2*i + 2;
+        int childIndex = 2*i + 2;
+        if(binaryHeap.size() >= childIndex)
+            return childIndex;
+        else return -1;
     }
 
     /**
