@@ -172,9 +172,6 @@ public class PriorityQueue<E> {
         return binaryHeap.get(0);
     }
 
-    public E pop(){
-        return removeFirst(0);
-    }
     @Override
     public String toString () {
         String elements = new String();
