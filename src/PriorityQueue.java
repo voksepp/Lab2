@@ -40,7 +40,6 @@ public class PriorityQueue<E> {
 
         binaryHeap.set(i1, e2);
         binaryHeap.set(i2, e1);
-
     }
 
     public E extract(E bid) {
