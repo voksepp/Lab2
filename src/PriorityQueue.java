@@ -27,8 +27,9 @@ public class PriorityQueue<E> {
     }
 
     public Bid extract(E bid) {
-        for(int i = binaryHeap.size(); i <= 0; i--){
-            if(cmp.compare(bid, binaryHeap.get(i) > 0)){
+        int extractAt;
+        for(extractAt = binaryHeap.size(); extractAt > 0; extractAt--){
+            if(cmp.compare(bid, binaryHeap.get(i)) > 0){
                 break;
             }
         }
