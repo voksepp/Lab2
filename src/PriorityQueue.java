@@ -15,7 +15,7 @@ public class PriorityQueue<E> {
         this.cmp=cmp;
     }
 
-    public void insert(E e) {
+    public void insert(E bid) {
         int insertAt;
         for(insertAt = 0; insertAt < binaryHeap.size(); insertAt++) {
             if(cmp.compare(e, binaryHeap.get(insertAt)) > 0) {
@@ -26,7 +26,7 @@ public class PriorityQueue<E> {
         placeMap.put(e, binaryHeap.size() - 1);
     }
 
-    public Bid extract(E bid) {
+    public E extract(E bid) {
         int extractAt;
         for(extractAt = binaryHeap.size(); extractAt > 0; extractAt--){
             if(cmp.compare(bid, binaryHeap.get(extractAt)) > 0){
