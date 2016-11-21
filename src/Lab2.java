@@ -33,7 +33,7 @@ public class Lab2 {
                 if(bidMap.containsKey(b.getName())) {
                     Bid a = bidMap.get(b.getName());
                     a.updateValue(b.getValue(),b.getOldValue());
-                    buyPriorityQueue.replace(b,a);
+                    buyPriorityQueue.replace(bidMap.get(b.getName()),a);
                 }
                 else{
                     System.out.println("Ogiltig ändring av bud, felaktigt namn");
