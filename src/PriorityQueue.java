@@ -35,7 +35,7 @@ public class PriorityQueue<E> {
      * @param e
      */
     public void replace(E e){
-        if(){
+        if(e.equals()){
 
         }
         else{
@@ -49,7 +49,10 @@ public class PriorityQueue<E> {
      * @return
      */
     public E extract(int index) { //FIXME: fixa
-        bubbleDown(index);
+        while (index < binaryHeap.size()-1) {
+            swap(index, rightChild(index));
+            index = parent(index);
+        }
         return binaryHeap.get(binaryHeap.size()-1);
         /*int extractAt;
         for (extractAt = binaryHeap.size(); extractAt > 0; extractAt--) {
@@ -86,8 +89,8 @@ public class PriorityQueue<E> {
      * @param index
      */
     //TODO: Jämföra barn osv
-    public void bubbleDown(int index){
-        while(index < binaryHeap.size()) {
+    public void bubbleDown(int index) {
+        while (index < binaryHeap.size()) {
 
             swap(index, parent(index));
             index = parent(index);

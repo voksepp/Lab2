@@ -22,6 +22,9 @@ public class Bid {
     public int getValue() {
         return value;
     }
+    public int getOldValue(){
+        return oldValue;
+    }
     public String getName(){
         return name;
     }
@@ -32,6 +35,10 @@ public class Bid {
     @Override
     public String toString(){
         return name + " " + value + ", ";
+    }
+    @Override
+    public boolean equals(Bid b){
+        return value == b.getOldValue();
     }
 
 }
