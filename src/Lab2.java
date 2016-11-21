@@ -92,7 +92,7 @@ public class Lab2 {
                 // m.group(4): NK or NS.
                 // m.group(5): Old value.
                 // m.group(6): New value.
-                return new Bid(m.group(1), m.group(4), Integer.parseInt(m.group(5)), Integer.parseInt(m.group(5)));  // Incomplete code.
+                return new Bid(m.group(1), m.group(4), Integer.parseInt(m.group(6)), Integer.parseInt(m.group(5)));  // Incomplete code.
             } else {
                 // m.group(1): The name of the buyer/seller.
                 // m.group(2): K or S.
