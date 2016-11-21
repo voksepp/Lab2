@@ -34,11 +34,11 @@ public class PriorityQueue<E> {
      */
     public void replace(E o, E n){
         int i = binaryHeap.indexOf(o);
-        remove(i);
+        removeElement(i);
         insert(n);
     }
 
-    public E remove(int index){
+    public E removeElement(int index){
         while (index <= (binaryHeap.size() - 1)) {
             if(rightChild(index) != -1){
                 //if (cmp.compare(binaryHeap.get(leftChild(index)), binaryHeap.get(rightChild(index))) > 0){
@@ -72,7 +72,7 @@ public class PriorityQueue<E> {
      * @return
      */
     public E removeFirst() {
-        return remove(0);
+        return removeElement(0);
 }
 
     /**
