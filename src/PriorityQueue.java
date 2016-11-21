@@ -68,6 +68,7 @@ public class PriorityQueue<E> {
         E tmp = binaryHeap.get(lastIndex);
         binaryHeap.remove(lastIndex);
         placeMap.remove(tmp);
+        bubbleDown(0);
         return tmp;
 }
 
