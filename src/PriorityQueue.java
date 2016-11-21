@@ -26,14 +26,10 @@ public class PriorityQueue<E> {
      */
     public void insert(E e) {
         if(binaryHeap.size() > 0) {
-            binaryHeap.add(binaryHeap.size() , e);
+            binaryHeap.add(e);
             placeMap.put(e, binaryHeap.indexOf(e));
         }
-        else {
-            binaryHeap.add(e);
-            placeMap.put(e,binaryHeap.indexOf(e));
-        }
-        bubbleUp(binaryHeap.size() - 1);
+        bubbleUp(binaryHeap.indexOf(e));
     }
 
     /**
