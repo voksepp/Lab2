@@ -31,6 +31,15 @@ public class PriorityQueue<E> {
         binaryHeap.add(insertAt, e);
     }
 
+    private void swap(int i1, int i2){
+        placeMap.put(binaryHeap.get(i1), placeMap.get(binaryHeap.get(i2)));
+        placeMap.put(binaryHeap.get(i2), placeMap.get(binaryHeap.get(i1)));
+        E temp = binaryHeap.get(i1);
+        binaryHeap.set(i1, binaryHeap.get(i2));
+        binaryHeap.set(i2, temp);
+
+    }
+
     public E extract(E bid) {
         int extractAt;
         for(extractAt = binaryHeap.size(); extractAt > 0; extractAt--){
