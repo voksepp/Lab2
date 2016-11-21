@@ -1,9 +1,6 @@
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  *
@@ -38,7 +35,12 @@ public class PriorityQueue<E> {
      * @param e
      */
     public void replace(E e){
+        if(){
 
+        }
+        else{
+            System.out.println("Felaktigt bud. Detta bud existerar ej!");
+        }
     }
 
     /**
