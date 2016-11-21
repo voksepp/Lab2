@@ -23,7 +23,7 @@ public class PriorityQueue<E> {
             }
         }
         binaryHeap.add(insertAt, bid);
-        placeMap.put(E.toString(),E.getValue());
+        placeMap.put(E.(),E.getValue());
     }
 
     public Bid extract() {
