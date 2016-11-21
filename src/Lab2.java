@@ -34,6 +34,11 @@ public class Lab2 {
         printOrderBook(buyPriorityQueue,sellPriorityQueue);
     }
 
+    /**
+     *
+     * @param buyQueue
+     * @param sellQueue
+     */
     private static void printOrderBook (PriorityQueue buyQueue, PriorityQueue sellQueue){
         System.out.println("Orderbok;");
         System.out.println("Säljare: " + sellQueue.toString());
