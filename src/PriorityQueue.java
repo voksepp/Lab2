@@ -22,7 +22,7 @@ public class PriorityQueue<E> {
     }
 
     public void bubbleUp(int index){
-        while(index > 0 && cmp.compare(binaryHeap.get(index),binaryHeap.get(parent(index))) > 0) {
+        while(index > 0 && cmp.compare(binaryHeap.get(index), binaryHeap.get(parent(index))) > 0) {
             swap(index, parent(index));
             index = parent(index);
         }
