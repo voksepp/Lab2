@@ -29,11 +29,11 @@ public class PriorityQueue<E> {
     public Bid extract(E bid) {
         int extractAt;
         for(extractAt = binaryHeap.size(); extractAt > 0; extractAt--){
-            if(cmp.compare(bid, binaryHeap.get(i)) > 0){
+            if(cmp.compare(bid, binaryHeap.get(extractAt)) > 0){
                 break;
             }
         }
-        return binaryHeap.get(i);
+        return binaryHeap.get(extractAt);
 
 
         /*int index = 1;
