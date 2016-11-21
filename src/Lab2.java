@@ -48,12 +48,18 @@ public class Lab2 {
                 else
                     System.out.println("Ogiltig ändring av bud, felaktigt namn");
             }
+
+            if(buyPriorityQueue.peek() != null || sellPriorityQueue.peek() != null){
+                if(buyPriorityQueue.peek().getValue() >= sellPriorityQueue.peek().getValue()){
+                    Bid buy = buyPriorityQueue.pop();
+                    Bid sell = sellPriorityQueue.pop();
+
+                    System.out.println(buy.getName() + " köper från " + sell.getName() + " för " + sell.getValue() + " kr");
+                }
+            }
         }
 
-        sellPriorityQueue.peek().getValue()
-
         printOrderBook(buyPriorityQueue,sellPriorityQueue);
-
     }
 
     /**
