@@ -185,12 +185,23 @@ public class PriorityQueue<E> {
     @Override
     public String toString () {
         String elements = new String();
+
+        while(binaryHeap.size() != 0)
+            elements = elements + extract(0).toString();
+
+        if(elements.length()<=2)
+            return "";
+        return elements.substring(0, elements.length() - 2);
+
+
+        /*
         for (E e: binaryHeap){
             elements = elements + e.toString();
         }
         if(elements.length()<=2)
             return "";
         return elements.substring(0, elements.length() - 2);
+        */
     }
     public int getSize () {
         return binaryHeap.size();
