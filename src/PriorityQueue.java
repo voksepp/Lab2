@@ -65,8 +65,8 @@ public class PriorityQueue<E> {
     }
 
     /**
-     *
-     * @param index
+     *bubbleDown takes the index of a bid and puts it in the correct position of the binary heap
+     * @param index the index of the bid
      */
     public void bubbleDown(int index) {
         while (index < binaryHeap.size() - 1) {
