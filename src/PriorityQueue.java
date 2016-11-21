@@ -51,23 +51,6 @@ public class PriorityQueue<E> {
             index = parent(index);
         }
         return binaryHeap.get(binaryHeap.size()-1);
-        /*int extractAt;
-        for (extractAt = binaryHeap.size(); extractAt > 0; extractAt--) {
-            if (cmp.compare(bid, binaryHeap.get(extractAt)) > 0) {
-                break;
-            }
-        }
-        placeMap.remove(bid,extractAt);
-        return binaryHeap.get(extractAt);*/
-
-
-        /*
-        insert(binaryHeap.get(binaryHeap.size() - 1));
-        E temp = binaryHeap.remove(0);
-        placeMap.remove(temp);
-        bubbleDown(index);
-        return temp;
-        */
     }
 
     /**
