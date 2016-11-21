@@ -56,6 +56,7 @@ public class PriorityQueue<E> {
                 break;
             }
         }
+        placeMap.remove(bid,extractAt);
         return binaryHeap.get(extractAt);
     }
 
