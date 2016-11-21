@@ -32,14 +32,12 @@ public class PriorityQueue<E> {
 
     /**
      *
-     * @param e
+     * @param
      */ //TODO: felhantering ändring av bud
-    public void update(E e){
-        if(e.get){
-        }
-        else{
-            System.out.println("Felaktigt bud. Detta bud existerar ej!");
-        }
+    public void replace(E old, E n){
+        int i = binaryHeap.indexOf(old);
+        extract(i);
+        insert(n);
     }
 
     /**

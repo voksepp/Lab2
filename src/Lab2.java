@@ -18,15 +18,30 @@ public class Lab2 {
         PriorityQueue buyPriorityQueue = new PriorityQueue(buyComparator);
         PriorityQueue sellPriorityQueue = new PriorityQueue(sellComparator);
 
+        Map<String, Bid> bidMap = new HashMap<>();
+
         for (Bid b: bids){
-            if(b.getType().equals("K"))
+            if(b.getType().equals("K")) {
+                bidMap.put(b.getName(),b);
                 buyPriorityQueue.insert(b);
-            else if (b.getType().equals("B"))
+            }
+            else if (b.getType().equals("B")) {
+                bidMap.put(b.getName(),b);
                 sellPriorityQueue.insert(b);
-            else if (b.getType().equals("NK"))
-                buyPriorityQueue.update(b);
-            else if (b.getType().equals("NS"))
+            }
+            else if (b.getType().equals("NK")){
+                if(bidMap.containsKey(b.getName()){
+                    Bid a = bidMap.get(b.getName());
+                    a.updateValue(b.getValue(),b.getOldValue());
+                    buyPriorityQueue.replace(b,a);
+                }
+                else{
+                    System.out.println("Ogiltig ändring av bud, felaktigt namn");
+                }
+            }
+            else if (b.getType().equals("NS")){
                 sellPriorityQueue.update(b);
+            }
         }
 
         ...

@@ -2,8 +2,8 @@ import java.util.Comparator;
 
 public class Bid {
     private final String name;
-    private final int value;
-    private final int oldValue;
+    private int value;
+    private int oldValue;
     private final String type;
 
     public Bid(String name, String type, int value){
@@ -32,7 +32,14 @@ public class Bid {
     public String getType(){
         return type;
     }
-    public void update
+    public void updateValue (int newValue, int oldValue){
+        if(value == oldValue){
+            this.oldValue = oldValue;
+            value = newValue;
+        }
+        else
+            System.out.println("Ogiltig ändring av bud, tidigare värde ej korrekt");
+    }
     @Override
     public String toString(){
         return name + " " + value + ", ";
