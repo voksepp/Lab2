@@ -128,6 +128,7 @@ public class PriorityQueue<E> {
     public E pop(){
         insert(binaryHeap.get(binaryHeap.size() - 1));
         E temp = binaryHeap.remove(binaryHeap.size() -1);
+        placeMap.remove(temp);
         bubbleDown(0);
         return temp;
     }
