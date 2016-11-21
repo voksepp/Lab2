@@ -40,7 +40,7 @@ public class PriorityQueue<E> {
 
     /**
      *
-     * @param index
+     * @param
      * @return
      */
     public E removeFirst() {
@@ -177,7 +177,7 @@ public class PriorityQueue<E> {
         String elements = new String();
 
         while(binaryHeap.size() > 0)
-            elements = elements + removeFirst(0).toString();
+            elements = elements + removeFirst().toString();
 
         if(elements.length()<=2)
             return "";
