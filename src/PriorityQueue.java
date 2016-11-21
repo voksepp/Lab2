@@ -27,7 +27,7 @@ public class PriorityQueue<E> {
     public void insert(E e) {
         if(binaryHeap.size() > 0) {
             binaryHeap.add(binaryHeap.size() , e);
-            placeMap.put(e, binaryHeap.size());
+            placeMap.put(e, binaryHeap.indexOf(e));
         }
         else {
             binaryHeap.add(e);
