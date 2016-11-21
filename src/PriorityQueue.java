@@ -38,7 +38,12 @@ public class PriorityQueue<E> {
      * @param e
      */
     public void replace(E e){
+        if(){
 
+        }
+        else{
+            System.out.println("Felaktigt bud. Detta bud existerar ej!");
+        }
     }
 
     /**
