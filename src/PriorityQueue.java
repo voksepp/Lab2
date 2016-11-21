@@ -14,22 +14,17 @@ public class PriorityQueue<E> {
     public PriorityQueue (Comparator<? super E> cmp){
         this.cmp=cmp;
     }
-
     public void insert(E e) {
         binaryHeap.add(e);
         placeMap.put(e, binaryHeap.size() - 1);
         bubbleUp(binaryHeap.size() - 1);
     }
-
     public void bubbleUp(int index){
         while(index > 0 && cmp.compare(binaryHeap.get(index), binaryHeap.get(parent(index))) > 0) {
             swap(index, parent(index));
             index = parent(index);
         }
     }
-
-
-
     private void swap(int i1, int i2){
         E e1 = binaryHeap.get(i1);
         E e2 = binaryHeap.get(i2);
@@ -50,8 +45,6 @@ public class PriorityQueue<E> {
         }
         return binaryHeap.get(extractAt);
     }
-
-
         /*int index = 1;
 
         // bubble down
