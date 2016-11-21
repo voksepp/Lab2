@@ -5,16 +5,28 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ *
+ * @param <E>
+ */
 public class PriorityQueue<E> {
 
     private ArrayList<E> binaryHeap = new ArrayList<>();
     private Comparator<? super E> cmp;
     private Map<E, Integer> placeMap = new HashMap<>();
 
+    /**
+     *
+     * @param cmp
+     */
     public PriorityQueue (Comparator<? super E> cmp){
         this.cmp=cmp;
     }
 
+    /**
+     *
+     * @param e
+     */
     public void insert(E e) {
         binaryHeap.add(e);
         placeMap.put(e, binaryHeap.size() - 1);
@@ -22,6 +34,12 @@ public class PriorityQueue<E> {
     }
 
     //FIXME: Gör så att extract ändrar i placemap också
+
+    /**
+     *
+     * @param bid
+     * @return
+     */
     public E extract(E bid) {
         int extractAt;
         for (extractAt = binaryHeap.size(); extractAt > 0; extractAt--) {
@@ -32,12 +50,22 @@ public class PriorityQueue<E> {
         return binaryHeap.get(extractAt);
     }
 
+    /**
+     *
+     * @param index
+     */
     public void bubbleUp(int index){
         while(index > 0 && cmp.compare(binaryHeap.get(index), binaryHeap.get(parent(index))) > 0) {
             swap(index, parent(index));
             index = parent(index);
         }
     }
+
+    /**
+     *
+     * @param i1
+     * @param i2
+     */
     private void swap(int i1, int i2){
         E e1 = binaryHeap.get(i1);
         E e2 = binaryHeap.get(i2);
@@ -48,18 +76,46 @@ public class PriorityQueue<E> {
         binaryHeap.set(i1, e2);
         binaryHeap.set(i2, e1);
     }
+
+    /**
+     *
+     * @param i
+     * @return
+     */
     private int parent(int i) {
         return (i - 1) / 2;
     }
+
+    /**
+     *
+     * @param i
+     * @return
+     */
     private int leftChild(int i) {
         return 2*i + 1;
     }
+
+    /**
+     *
+     * @param i
+     * @return
+     */
     private int rightChild(int i) {
         return 2*i + 2;
     }
+
+    /**
+     *
+     * @return
+     */
     public E peek(){
         return binaryHeap.get(0);
     }
+
+    /**
+     *
+     * @return
+     */
     public E pop(){
         E temp = binaryHeap.get(0);
         placeMap.remove(binaryHeap.get(0));
