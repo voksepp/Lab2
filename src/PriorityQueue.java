@@ -59,12 +59,13 @@ public class PriorityQueue<E> {
         return binaryHeap.get(extractAt);
 
 
-
+        /*
         insert(binaryHeap.get(binaryHeap.size() - 1));
         E temp = binaryHeap.remove(0);
         placeMap.remove(temp);
         bubbleDown(index);
         return temp;
+        */
     }
 
     /**
@@ -83,7 +84,7 @@ public class PriorityQueue<E> {
      * @param index
      */
     public void bubbleDown(int index){
-        while(index < binaryHeap.size() && cmp.compare(binaryHeap.get(index), binaryHeap.get(parent(index))) > 0) {
+        while(index > 0 && cmp.compare(binaryHeap.get(index), binaryHeap.get(parent(index))) > 0) {
             swap(index, parent(index));
             index = parent(index);
         }
