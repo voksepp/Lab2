@@ -127,7 +127,7 @@ public class PriorityQueue<E> {
      */
     private int leftChild(int i) {
         int childIndex = 2*i + 1;
-        if(binaryHeap.size() >= childIndex)
+        if(binaryHeap.size() -1 >= childIndex)
             return childIndex;
         else return -1;
     }
@@ -139,7 +139,7 @@ public class PriorityQueue<E> {
      */
     private int rightChild(int i) {
         int childIndex = 2*i + 2;
-        if(binaryHeap.size() >= childIndex)
+        if(binaryHeap.size() -1 >= childIndex)
             return childIndex;
         else return -1;
     }
