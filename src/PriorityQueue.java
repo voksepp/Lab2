@@ -26,8 +26,10 @@ public class PriorityQueue<E> {
         placeMap.put(E.toString(),E.getValue());
     }
 
-    protected void bubbleDown() {
-        int index = 1;
+    public Bid extract() {
+
+
+        /*int index = 1;
 
         // bubble down
         while (hasLeftChild(index)) {
@@ -49,6 +51,6 @@ public class PriorityQueue<E> {
 
             // make sure to update loop counter/index of where last el is put
             index = smallerChild;
-        }
+        }*/
     }
 }
