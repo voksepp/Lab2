@@ -52,8 +52,8 @@ public class Lab2 {
 
             if(buyPriorityQueue.getSize() != 0 && sellPriorityQueue.getSize() != 0){
                 if(buyPriorityQueue.peek().getValue() >= sellPriorityQueue.peek().getValue()){
-                    Bid buy = buyPriorityQueue.pop();
-                    Bid sell = sellPriorityQueue.pop();
+                    Bid buy = buyPriorityQueue.removeFirst();
+                    Bid sell = sellPriorityQueue.removeFirst();
 
                     System.out.println(buy.getName() + " köper från " + sell.getName() + " för " + sell.getValue() + " kr");
                 }
