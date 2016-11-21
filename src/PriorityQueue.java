@@ -14,11 +14,23 @@ public class PriorityQueue<E> {
     public PriorityQueue (Comparator<? super E> cmp){
         this.cmp=cmp;
     }
+
     public void insert(E e) {
         binaryHeap.add(e);
         placeMap.put(e, binaryHeap.size() - 1);
         bubbleUp(binaryHeap.size() - 1);
     }
+
+    public E extract(E bid) {
+        int extractAt;
+        for (extractAt = binaryHeap.size(); extractAt > 0; extractAt--) {
+            if (cmp.compare(bid, binaryHeap.get(extractAt)) > 0) {
+                break;
+            }
+        }
+        return binaryHeap.get(extractAt);
+    }
+
     public void bubbleUp(int index){
         while(index > 0 && cmp.compare(binaryHeap.get(index), binaryHeap.get(parent(index))) > 0) {
             swap(index, parent(index));
@@ -35,39 +47,6 @@ public class PriorityQueue<E> {
         binaryHeap.set(i1, e2);
         binaryHeap.set(i2, e1);
     }
-
-    public E extract(E bid) {
-        int extractAt;
-        for (extractAt = binaryHeap.size(); extractAt > 0; extractAt--) {
-            if (cmp.compare(bid, binaryHeap.get(extractAt)) > 0) {
-                break;
-            }
-        }
-        return binaryHeap.get(extractAt);
-    }
-        /*int index = 1;
-
-        // bubble down
-        while (hasLeftChild(index)) {
-            // which of my children is smaller?
-            int smallerChild = leftIndex(index);
-
-            // bubble with the smaller child, if I have a smaller child
-            if (hasRightChild(index)
-                    && array[leftIndex(index)].compareTo(array[rightIndex(index)]) > 0) {
-                smallerChild = rightIndex(index);
-            }
-
-            if (array[index].compareTo(array[smallerChild]) > 0) {
-                swap(index, smallerChild);
-            } else {
-                // otherwise, get outta here!
-                break;
-            }
-
-            // make sure to update loop counter/index of where last el is put
-            index = smallerChild;
-        }*/
     private int parent(int i) {
         return (i - 1) / 2;
     }
