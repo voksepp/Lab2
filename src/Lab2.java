@@ -49,7 +49,7 @@ public class Lab2 {
                     System.out.println("Ogiltig ändring av bud, felaktigt namn");
             }
 
-            if(buyPriorityQueue.getSize() != 0 || sellPriorityQueue.getSize() != 0){
+            if(buyPriorityQueue.getSize() != 0 && sellPriorityQueue.getSize() != 0){
                 if(buyPriorityQueue.peek().getValue() >= sellPriorityQueue.peek().getValue()){
                     Bid buy = buyPriorityQueue.pop();
                     Bid sell = sellPriorityQueue.pop();
