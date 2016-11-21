@@ -92,8 +92,8 @@ public class PriorityQueue<E> {
 
     /**
      *
-     * @param i1
-     * @param i2
+     * @param i1 the first index
+     * @param i2 the second index
      */
     private void swap(int i1, int i2){
         E e1 = binaryHeap.get(i1);
@@ -108,8 +108,8 @@ public class PriorityQueue<E> {
 
     /**
      *
-     * @param i
-     * @return
+     * @param i index of child
+     * @return index of parent
      */
     private int parent(int i) {
         return (i - 1) / 2;
