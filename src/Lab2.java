@@ -25,7 +25,7 @@ public class Lab2 {
                 bidMap.put(b.getName(),b);
                 buyPriorityQueue.insert(b);
             }
-            else if (b.getType().equals("B")) {
+            else if (b.getType().equals("S")) {
                 bidMap.put(b.getName(),b);
                 sellPriorityQueue.insert(b);
             }
