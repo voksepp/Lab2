@@ -182,6 +182,8 @@ public class PriorityQueue<E> {
         for (E e: binaryHeap){
             elements = elements + e.toString();
         }
+        if(elements.length()<=2)
+            return "";
         return elements.substring(0, elements.length() - 2);
     }
 }
