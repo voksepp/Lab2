@@ -83,4 +83,13 @@ public class PriorityQueue<E> {
             index = smallerChild;
         }*/
     }
+    private int parent(int i) {
+        return (i - 1) / 2;
+    }
+    private int left(int i) {
+        return 2*i + 1;
+    }
+    private int right(int i) {
+        return 2*i + 2;
+    }
 }
