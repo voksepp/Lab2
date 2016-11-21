@@ -35,6 +35,14 @@ public class PriorityQueue<E> {
 
     /**
      *
+     * @param e
+     */
+    public void replace(E e){
+
+    }
+
+    /**
+     *
      * @param bid
      * @return
      */
