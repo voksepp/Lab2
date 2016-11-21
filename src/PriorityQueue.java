@@ -34,7 +34,7 @@ public class PriorityQueue<E> {
      */
     public void replace(E o, E n){
         int i = binaryHeap.indexOf(o);
-        removeFirst();
+        remove(i);
         insert(n);
     }
 
