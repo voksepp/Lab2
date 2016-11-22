@@ -15,7 +15,14 @@ One trade: O(log n)
     dasdasdasdasd
     asdasd
 
-Modifying a bid: O(log n)
-    When a bid is modified
+Modifying a bid: < O(log n) >
+    1.  Old bid is modified with the new value: O(1)
+    2.  Priority queue replace method is called with the old bid and the new
+        bid as parameters.
+            2a.     Index of the old bid is retrieved from the HashMap: O(1)
+            2b.     The removeElement method is used to remove the old element
+                    from the heap. It calls the bubbleDown method: O(log n)
+                    (similar to above).
+            2c.     The new bid is inserted, calls the bubbleUp method: O(log n).
 
 Printing the order book: O(XXX)

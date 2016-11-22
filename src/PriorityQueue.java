@@ -28,8 +28,8 @@ class PriorityQueue<E> {
      */
     void insert(E e) {
         binaryHeap.add(e);
-        placeMap.put(e, binaryHeap.indexOf(e));
-        bubbleUp(binaryHeap.indexOf(e));
+        placeMap.put(e, binaryHeap.size()-1);
+        bubbleUp(placeMap.get(e));
     }
 
     /**
