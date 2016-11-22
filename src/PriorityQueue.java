@@ -83,7 +83,7 @@ class PriorityQueue<E> {
 
     /**
      *
-     * @param i
+     * @param i is the index of the bid that is to be removed
      * @return returns a generic Element E
      */
     private E removeElement(int i){

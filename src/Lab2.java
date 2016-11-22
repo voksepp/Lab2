@@ -146,7 +146,7 @@ public class Lab2 {
     /**
      * Reads a list of bids, makes sure they are correctly formatted and then calls the trade method
      * @param args file name
-     * @throws FileNotFoundException
+     * @throws FileNotFoundException throws an exception if the file is not found
      */
     public static void main(String[] args) throws FileNotFoundException{
         if (args.length >= 2) {
