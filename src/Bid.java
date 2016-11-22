@@ -6,9 +6,9 @@ public class Bid {
 
     /**
      *
-     * @param name
-     * @param type
-     * @param value
+     * @param name is the name of the bidder
+     * @param type is the type of bid (sell, buy)
+     * @param value is the bid amount
      */
     public Bid(String name, String type, int value){
         this.name = name;
@@ -19,10 +19,10 @@ public class Bid {
 
     /**
      *
-     * @param name
-     * @param type
-     * @param value
-     * @param oldValue
+     * @param name is the name of the bidder
+     * @param type is the type of bid (change a sell bid, change a buy bid)
+     * @param value is the bid amount
+     * @param oldValue is the old bid amount that is to be changed
      */
     public Bid(String name, String type, int value, int oldValue){
         this.name = name;
@@ -33,7 +33,7 @@ public class Bid {
 
     /**
      *
-     * @return
+     * @return returns the value of a bid
      */
     public int getValue() {
         return value;
@@ -41,7 +41,7 @@ public class Bid {
 
     /**
      *
-     * @return
+     * @return returns the value of the old bid
      */
     public int getOldValue(){
         return oldValue;
@@ -49,15 +49,16 @@ public class Bid {
 
     /**
      *
-     * @return
+     * @return returns the name of the bidder
      */
     public String getName(){
         return name;
     }
 
-    /**
+    /**java -ea -jar testing.jar lab2test.Lab2GenTest Lab2
+
      *
-     * @return
+     * @return returns the bid type
      */
     public String getType(){
         return type;
@@ -65,8 +66,8 @@ public class Bid {
 
     /**
      *
-     * @param newValue
-     * @param oldValue
+     * @param newValue is the value that the bid is to be changed to
+     * @param oldValue is the current value of the bid
      */
     public void updateValue (int newValue, int oldValue){
         if(value == oldValue){
@@ -79,7 +80,8 @@ public class Bid {
 
     /**
      *
-     * @return
+     * @return returns a string with the name of the bidder and
+     * the value of their bid followed by followed by a comma
      */
     @Override
     public String toString(){
