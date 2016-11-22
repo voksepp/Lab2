@@ -29,7 +29,7 @@ class PriorityQueue<E> {
     }
 
     /**
-     *
+     * Replaces....
      * @param o the element that is to be removed
      * @param n the element that is to replace the old element
      */
