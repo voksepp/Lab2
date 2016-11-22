@@ -10,11 +10,6 @@ Insert bid:
 
 
 Transactions:
-    sdasdsd
-    asdas
-    dasdasdasdasd
-    asdasd
-
     When a transaction is made the first element in the sellPriorityQueue and buyPriorityQueue
     matches and therefore should be removed and printed out. The removeFirst method is called
     which calls the removeElement method with the index 0 as an input argument. This method
