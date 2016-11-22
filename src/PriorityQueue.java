@@ -2,7 +2,7 @@ import java.util.*;
 
 /**
  *
- * @param <E> This class can take a generic type E
+ * @param <E> This class can take a generic element type E
  */
 public class PriorityQueue<E> {
 
@@ -84,7 +84,7 @@ public class PriorityQueue<E> {
     /**
      *
      * @param i
-     * @return
+     * @return returns a generic Element E
      */
     private E removeElement(int i){
         swap (i, binaryHeap.size()-1);
