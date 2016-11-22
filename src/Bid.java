@@ -1,4 +1,4 @@
-public class Bid {
+class Bid {
     private final String name;
     private int value;
     private int oldValue;
@@ -10,7 +10,7 @@ public class Bid {
      * @param type is the type of bid (sell, buy)
      * @param value is the bid amount
      */
-    public Bid(String name, String type, int value){
+    Bid(String name, String type, int value){
         this.name = name;
         this.value = value;
         this.type = type;
@@ -24,7 +24,7 @@ public class Bid {
      * @param value is the bid amount
      * @param oldValue is the old bid amount that is to be changed
      */
-    public Bid(String name, String type, int value, int oldValue){
+    Bid(String name, String type, int value, int oldValue){
         this.name = name;
         this.value = value;
         this.type = type;
@@ -35,7 +35,7 @@ public class Bid {
      *
      * @return returns the value of a bid
      */
-    public int getValue() {
+    int getValue() {
         return value;
     }
 
@@ -43,7 +43,7 @@ public class Bid {
      *
      * @return returns the value of the old bid
      */
-    public int getOldValue(){
+    int getOldValue(){
         return oldValue;
     }
 
@@ -51,7 +51,7 @@ public class Bid {
      *
      * @return returns the name of the bidder
      */
-    public String getName(){
+    String getName(){
         return name;
     }
 
@@ -59,7 +59,7 @@ public class Bid {
      *
      * @return returns the bid type
      */
-    public String getType(){
+    String getType(){
         return type;
     }
 
@@ -68,7 +68,7 @@ public class Bid {
      * @param newValue is the value that the bid is to be changed to
      * @param oldValue is the current value of the bid
      */
-    public void updateValue (int newValue, int oldValue){
+    void updateValue (int newValue, int oldValue){
         if(value == oldValue){
             this.oldValue = oldValue;
             value = newValue;

@@ -4,7 +4,7 @@ import java.util.*;
  *
  * @param <E> This class can take a generic element type E
  */
-public class PriorityQueue<E> {
+class PriorityQueue<E> {
 
     private final ArrayList<E> binaryHeap = new ArrayList<>();
     private final Comparator<? super E> cmp;
@@ -14,7 +14,7 @@ public class PriorityQueue<E> {
      * Constructor for the priority queue
      * @param cmp The Comparator that will be used to determine the order of objects in the queue
      */
-    public PriorityQueue (Comparator<? super E> cmp){
+    PriorityQueue (Comparator<? super E> cmp){
         this.cmp=cmp;
     }
 
@@ -22,7 +22,7 @@ public class PriorityQueue<E> {
      * This method inserts an object in the priority queue and places it in the appropriate position
      * @param e An object
      */
-    public void insert(E e) {
+    void insert(E e) {
         binaryHeap.add(e);
         placeMap.put(e, binaryHeap.indexOf(e));
         bubbleUp(binaryHeap.indexOf(e));
@@ -33,7 +33,7 @@ public class PriorityQueue<E> {
      * @param o the element that is to be removed
      * @param n the element that is to replace the old element
      */
-    public void replace(E o, E n){
+    void replace(E o, E n){
         int i = binaryHeap.indexOf(o);
         removeElement(i);
         insert(n);
@@ -77,7 +77,7 @@ public class PriorityQueue<E> {
      *
      * @return calls the removeElement method with index 0 as input parameter
      */
-    public E removeFirst(){
+    E removeFirst(){
         return removeElement(0);
     }
 
@@ -146,7 +146,7 @@ public class PriorityQueue<E> {
      *
      * @return element at the front of the queue
      */
-    public E peek(){
+    E peek(){
         return binaryHeap.get(0);
     }
 
@@ -166,7 +166,7 @@ public class PriorityQueue<E> {
      *
      * @return the size of the priority queue
      */
-    public int size() {
+    int size() {
         return binaryHeap.size();
     }
 }
