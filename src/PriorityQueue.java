@@ -54,7 +54,7 @@ class PriorityQueue<E> {
         }
     }
 
-    /** //Compares an element and swaps place if needed until the element is in the correct position
+    /** //Compares an element to its children and swaps place if needed until the element is in the correct position (going downwards)
      * @param i is the index of the bid that should be bubbled down
      */
     private void bubbleDown(int i) {
