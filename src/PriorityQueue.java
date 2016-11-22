@@ -54,7 +54,7 @@ class PriorityQueue<E> {
         }
     }
 
-    /** //TODO:SKRIV
+    /** //Compares an element and swaps place if needed until the element is in the correct position
      * @param i is the index of the bid that should be bubbled down
      */
     private void bubbleDown(int i) {
