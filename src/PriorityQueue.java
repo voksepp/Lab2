@@ -33,7 +33,7 @@ class PriorityQueue<E> {
     }
 
     /**
-     * Replaces //TODO: skriv
+     * Replaces an element in the list with another.
      *
      * @param o the element that is to be removed
      * @param n the element that is to replace the old element
