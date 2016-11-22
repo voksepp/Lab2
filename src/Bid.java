@@ -5,7 +5,7 @@ public class Bid {
     private final String type;
 
     /**
-     *
+     * Constructor for a new bid
      * @param name is the name of the bidder
      * @param type is the type of bid (sell, buy)
      * @param value is the bid amount
@@ -18,7 +18,7 @@ public class Bid {
     }
 
     /**
-     *
+     * Constructor for a changed bid
      * @param name is the name of the bidder
      * @param type is the type of bid (change a sell bid, change a buy bid)
      * @param value is the bid amount
@@ -55,8 +55,7 @@ public class Bid {
         return name;
     }
 
-    /**java -ea -jar testing.jar lab2test.Lab2GenTest Lab2
-
+    /**
      *
      * @return returns the bid type
      */
@@ -65,7 +64,7 @@ public class Bid {
     }
 
     /**
-     *
+     * Updates the value of a bid, if the old value given is correct
      * @param newValue is the value that the bid is to be changed to
      * @param oldValue is the current value of the bid
      */
@@ -81,7 +80,7 @@ public class Bid {
     /**
      *
      * @return returns a string with the name of the bidder and
-     * the value of their bid followed by followed by a comma
+     * the value of their bid followed by a comma
      */
     @Override
     public String toString(){
