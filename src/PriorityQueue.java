@@ -33,7 +33,7 @@ class PriorityQueue<E> {
      * @param o the element that is to be removed
      * @param n the element that is to replace the old element
      */
-    public void replace(E o, E n){
+    void replace(E o, E n){
         int i = placeMap.get(o);
         removeElement(i);
         insert(n);
