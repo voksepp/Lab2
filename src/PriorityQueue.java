@@ -76,14 +76,16 @@ class PriorityQueue<E> {
         }
     }
 
-    /** TODO:SKRIV
-     * @return calls the removeElement method with index 0 as input parameter
+    /**
+     * Removes and returns the first element in the queue
+     * @return the element
      */
     E removeFirst() {
         return removeElement(0);
     }
 
-    /** TODO:SKRIV
+    /**
+     * Removes an element in the queue
      * @param i is the index of the bid that is to be removed
      * @return returns a generic Element E
      */
@@ -94,7 +96,8 @@ class PriorityQueue<E> {
         return temp;
     }
 
-    /** TODO:SKRIV
+    /**
+     * Swaps two elements in the queue.
      * @param i1 the first index
      * @param i2 the second index
      */
@@ -109,7 +112,7 @@ class PriorityQueue<E> {
         binaryHeap.set(i2, e1);
     }
 
-    /** TODO:SKRIV
+    /**
      * @param i index of child
      * @return index of parent
      */
@@ -117,9 +120,9 @@ class PriorityQueue<E> {
         return (i - 1) / 2;
     }
 
-    /** TODO:SKRIV
+    /**
      * @param i index of parent
-     * @return index of the left child
+     * @return index of the left child if it exists, else -1
      */
     private int leftChild(int i) {
         int childIndex = 2 * i + 1;
@@ -128,9 +131,9 @@ class PriorityQueue<E> {
         else return -1;
     }
 
-    /** TODO:SKRIV
+    /**
      * @param i index of parent
-     * @return index of the right child
+     * @return the index of the right child if it exists, else -1
      */
     private int rightChild(int i) {
         int childIndex = 2 * i + 2;
@@ -145,6 +148,11 @@ class PriorityQueue<E> {
     E peek() {
         return binaryHeap.get(0);
     }
+
+    /**
+     * Returns a string containing all elements in the queue in order of priority
+     * @return A string representation of all elements in the queue
+     */
 
     @Override
     public String toString() {
