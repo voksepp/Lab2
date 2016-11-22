@@ -2,17 +2,15 @@ import java.io.*;
 import java.util.*;
 import java.util.regex.*;
 
-/**
- * ...
- */
-
 public class Lab2 {
 
     /**
+     * Performs trades. Sells each share where the lowest sell price
+     * is lower than that of the buyer bid, the share is traded at the
+     * price specified by the seller.
      *
-     * @param bids
+     * @param bids List of bids
      */
-
     public static void trade(List<Bid> bids) {
         BuyComparator buyComparator = new BuyComparator();
         SellComparator sellComparator = new SellComparator();
@@ -63,9 +61,9 @@ public class Lab2 {
     }
 
     /**
-     *
-     * @param buyQueue
-     * @param sellQueue
+     * Prints the order book of remaining bids
+     * @param buyQueue Priority queue of buyer bids
+     * @param sellQueue Priority queue of seller bids
      */
     private static void printOrderBook (PriorityQueue buyQueue, PriorityQueue sellQueue){
         System.out.println("Orderbok:");
@@ -144,7 +142,7 @@ public class Lab2 {
     }
 
     /**
-     * Reads a list of bids and performs trades
+     * Reads a list of bids, makes sure they are correctly formatted and then calls the trade method
      * @param args file name
      * @throws FileNotFoundException
      */
