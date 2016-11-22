@@ -2,7 +2,7 @@ import java.util.*;
 
 /**
  *
- * @param <E>
+ * @param <E> This class can take a generic type E
  */
 public class PriorityQueue<E> {
 
@@ -41,7 +41,7 @@ public class PriorityQueue<E> {
 
     /**
      *
-     * @param index
+     * @param index is the index of the bid that should be bubbled up
      */
     private void bubbleUp(int index){
         while(index > 0 && cmp.compare(binaryHeap.get(index), binaryHeap.get(parent(index))) > 0) {
