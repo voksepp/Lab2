@@ -50,7 +50,7 @@ public class Lab2 {
                     break;
             }
 
-            if(buyPriorityQueue.getSize() != 0 && sellPriorityQueue.getSize() != 0){
+            if(buyPriorityQueue.size() != 0 && sellPriorityQueue.size() != 0){
                 if(buyPriorityQueue.peek().getValue() >= sellPriorityQueue.peek().getValue()){
                     Bid buy = buyPriorityQueue.removeFirst();
                     Bid sell = sellPriorityQueue.removeFirst();
