@@ -29,5 +29,4 @@ Transactions:
     asdasdasd
     asdasd
 
-Ni ska också ange vad den asymptotiska komplexiteten för att
-skriva ut prioritetsköerna är och motivera detta.
+Printing the order book: O(XXX)
