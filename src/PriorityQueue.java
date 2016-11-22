@@ -30,8 +30,8 @@ public class PriorityQueue<E> {
 
     /**
      *
-     * @param o
-     * @param n
+     * @param o the element that is to be removed
+     * @param n the element that is to replace the old element
      */
     public void replace(E o, E n){
         int i = binaryHeap.indexOf(o);
@@ -52,7 +52,7 @@ public class PriorityQueue<E> {
 
     /**
      *
-     * @param i
+     * @param i is the index of the bid that should be bubbled down
      */
     private void bubbleDown(int i) {
         int left = leftChild(i);
@@ -75,7 +75,7 @@ public class PriorityQueue<E> {
 
     /**
      *
-     * @return
+     * @return calls the removeElement method with index 0 as input parameter
      */
     public E removeFirst(){
         return removeElement(0);
