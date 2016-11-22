@@ -1,7 +1,7 @@
 import java.util.Comparator;
 
 /**
- *
+ * Compares buy Bid elements
  */
 class BuyComparator implements Comparator<Bid>{
 
