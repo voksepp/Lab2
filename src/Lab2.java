@@ -176,7 +176,6 @@ public class Lab2 {
     /**
      * Exception class for malformed bids.
      */
-
     private static class MalformedBid extends Exception {
         MalformedBid(String bid) {
             super("Malformed bid: " + bid + ".");
