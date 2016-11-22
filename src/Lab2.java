@@ -9,7 +9,7 @@ public class Lab2 {
      * Performs trades. Sells each share where the lowest sell price
      * is lower than that of the buyer bid. The share is traded at the
      * price specified by the seller. Prints each trade.
-     *
+     * <p>
      * After trades have been completed, the remaining bids are printed.
      *
      * @param bids List of bids
