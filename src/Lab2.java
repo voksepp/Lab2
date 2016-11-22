@@ -1,6 +1,7 @@
 import java.io.*;
 import java.util.*;
-import java.util.regex.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Lab2 {
 
@@ -20,7 +21,7 @@ public class Lab2 {
         PriorityQueue<Bid> sellPriorityQueue = new PriorityQueue<>(sellComparator);
         Map<String, Bid> bidMap = new HashMap<>();
 
-        for (Bid b: bids){
+        for (Bid b : bids) {
             switch (b.getType()) {
                 case "K":
                     bidMap.put(b.getName(), b);
@@ -49,8 +50,8 @@ public class Lab2 {
                     break;
             }
 
-            if(buyPriorityQueue.size() != 0 && sellPriorityQueue.size() != 0){
-                if(buyPriorityQueue.peek().getValue() >= sellPriorityQueue.peek().getValue()){
+            if (buyPriorityQueue.size() != 0 && sellPriorityQueue.size() != 0) {
+                if (buyPriorityQueue.peek().getValue() >= sellPriorityQueue.peek().getValue()) {
                     Bid buy = buyPriorityQueue.removeFirst();
                     Bid sell = sellPriorityQueue.removeFirst();
 
@@ -59,15 +60,16 @@ public class Lab2 {
             }
         }
 
-        printOrderBook(buyPriorityQueue,sellPriorityQueue);
+        printOrderBook(buyPriorityQueue, sellPriorityQueue);
     }
 
     /**
      * Prints the order book of remaining bids
-     * @param buyQueue Priority queue of buyer bids
+     *
+     * @param buyQueue  Priority queue of buyer bids
      * @param sellQueue Priority queue of seller bids
      */
-    private static void printOrderBook (PriorityQueue buyQueue, PriorityQueue sellQueue){
+    private static void printOrderBook(PriorityQueue buyQueue, PriorityQueue sellQueue) {
         System.out.println("Orderbok:");
         System.out.println("Säljare: " + sellQueue.toString());
         System.out.println("Köpare: " + buyQueue.toString());
@@ -97,7 +99,7 @@ public class Lab2 {
                 // m.group(1): The name of the buyer/seller.
                 // m.group(2): K or S.
                 // m.group(3): The value.
-                return new Bid(m.group(1), m.group(2) ,Integer.parseInt(m.group(3)));  // Incomplete code. ...
+                return new Bid(m.group(1), m.group(2), Integer.parseInt(m.group(3)));  // Incomplete code. ...
             }
         } else {
             throw new MalformedBid(s);
@@ -108,7 +110,6 @@ public class Lab2 {
      * Parses line-separated bids from the given Readable thing.
      *
      * @param input The character stream that should be parsed.
-     *
      * @throws MalformedBid If some bid couldn't be parsed.
      */
 
@@ -124,16 +125,6 @@ public class Lab2 {
     }
 
     /**
-     * Exception class for malformed bids.
-     */
-
-    private static class MalformedBid extends Exception {
-        MalformedBid(String bid) {
-            super("Malformed bid: " + bid + ".");
-        }
-    }
-
-    /**
      * Prints usage info.
      */
 
@@ -145,14 +136,14 @@ public class Lab2 {
 
     /**
      * Reads a list of bids, makes sure they are correctly formatted and then calls the trade method
+     *
      * @param args file name
      * @throws FileNotFoundException throws an exception if the file is not found
      */
-    public static void main(String[] args) throws FileNotFoundException{
+    public static void main(String[] args) throws FileNotFoundException {
         if (args.length >= 2) {
             usageInfo();
-        }
-        else {
+        } else {
             try {
                 BufferedReader r;
                 if (args.length == 0) {
@@ -179,6 +170,16 @@ public class Lab2 {
                 System.err.println(e.getMessage());
                 usageInfo();
             }
+        }
+    }
+
+    /**
+     * Exception class for malformed bids.
+     */
+
+    private static class MalformedBid extends Exception {
+        MalformedBid(String bid) {
+            super("Malformed bid: " + bid + ".");
         }
     }
 }
