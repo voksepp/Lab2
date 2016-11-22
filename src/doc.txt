@@ -9,8 +9,8 @@ Insert bid: < O(log_2(n)) >
     O(log_2(n))
 
 
-Transactions: < O(log_2(n)) >
-    When a transaction is made the first element in the sellPriorityQueue and buyPriorityQueue
+Trade: < O(log_2(n)) >
+    When a trade is made the first element in the sellPriorityQueue and buyPriorityQueue
     matches and therefore should be removed and printed out. The removeFirst method is called
     which calls the removeElement method with the index 0 as an input argument. This method
     swaps the last and [index=0] element and then calls bubbleDown to put it in the correct
@@ -28,5 +28,5 @@ Modifying a bid: < O(log_2 (n)) >
             2c.     The new bid is inserted, calls the bubbleUp method: O(log n).
 
 Printing the order book: < O(log_2(n)) >
-    This is very similar to the transaction above, the removeFirst method is used
+    This is very similar to the trade above, the removeFirst method is used
     in the same way, and therefore the time complexity is also the same.
