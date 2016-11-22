@@ -98,7 +98,7 @@ class PriorityQueue<E> {
      * @param i1 the first index
      * @param i2 the second index
      */
-    private void swap(int i1, int i2) {
+    private void swap(int i1, int i2) { // time complexity O(1)
         E e1 = binaryHeap.get(i1);
         E e2 = binaryHeap.get(i2);
 
