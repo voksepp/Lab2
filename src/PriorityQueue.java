@@ -52,7 +52,7 @@ public class PriorityQueue<E> {
 
     /**
      *
-     * @param i
+     * @param i is the index of the bid that should be bubbled down
      */
     private void bubbleDown(int i) {
         int left = leftChild(i);
