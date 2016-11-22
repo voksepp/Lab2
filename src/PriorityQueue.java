@@ -44,7 +44,7 @@ class PriorityQueue<E> {
         insert(n);
     }
 
-    /** //TODO:SKRIV
+    /** //Compares an element to its parent and swaps place if needed until the element is in the correct position (going upwards)
      * @param index is the index of the bid that should be bubbled up
      */
     private void bubbleUp(int index) { // time complexity log(n)
