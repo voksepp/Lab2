@@ -47,7 +47,7 @@ class PriorityQueue<E> {
     /**
      * @param index is the index of the bid that should be bubbled up
      */
-    private void bubbleUp(int index) {
+    private void bubbleUp(int index) { // time complexity log(n)
         while (index > 0 && cmp.compare(binaryHeap.get(index), binaryHeap.get(parent(index))) > 0) {
             swap(index, parent(index));
             index = parent(index);
