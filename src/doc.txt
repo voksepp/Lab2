@@ -17,4 +17,5 @@ Genomförande av ett köp:
     asdasdasd
     asdasd
 
-Ni ska också ange vad den asymptotiska komplexiteten för att skriva ut prioritetsköerna är och motivera detta.
+Ni ska också ange vad den asymptotiska komplexiteten för att
+skriva ut prioritetsköerna är och motivera detta.
