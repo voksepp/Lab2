@@ -75,7 +75,7 @@ public class PriorityQueue<E> {
 
     /**
      *
-     * @return
+     * @return calls the removeElement method with index 0 as input parameter
      */
     public E removeFirst(){
         return removeElement(0);
