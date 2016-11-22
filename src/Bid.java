@@ -1,3 +1,8 @@
+/**
+ * A bid, contains the name of the seller/buyer, the type of bid (sell/buy),
+ * and the value of the bid. If the value of the bid is changed, it will
+ * also contain the old value.
+ */
 public class Bid {
     private final String name;
     private int value;
