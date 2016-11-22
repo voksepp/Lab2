@@ -1,6 +1,6 @@
 Time complexity analysis
 
-Insert bid:
+Insert bid: < O(log_2(n)) >
     n is the size of the order book. The bids are sorted in a binary heap so when a new bid is
     inserted the insert method puts it in the end of the binary heap and then calls the bubbleUp
     method. The bubbleUp function calls the swap method until (worst case scenario) the bid has
@@ -9,7 +9,7 @@ Insert bid:
     O(log_2(n))
 
 
-Transactions:
+Transactions: < O(log_2(n)) >
     When a transaction is made the first element in the sellPriorityQueue and buyPriorityQueue
     matches and therefore should be removed and printed out. The removeFirst method is called
     which calls the removeElement method with the index 0 as an input argument. This method
@@ -17,7 +17,7 @@ Transactions:
     position in the binary heap. The bubbleDown method has the same principle as the bubbleUp
     method and therefore the time complexity is O(log_2(n))
 
-Modifying a bid: < O(log n) >
+Modifying a bid: < O(log_2 (n)) >
     1.  Old bid is modified with the new value: O(1)
     2.  Priority queue replace method is called with the old bid and the new
         bid as parameters.
@@ -27,4 +27,6 @@ Modifying a bid: < O(log n) >
                     (similar to above).
             2c.     The new bid is inserted, calls the bubbleUp method: O(log n).
 
-Printing the order book: O(XXX)
+Printing the order book: < O(log_2(n)) >
+    This is very similar to the transaction above, the removeFirst method is used
+    in the same way, and therefore the time complexity is also the same.
