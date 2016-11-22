@@ -3,17 +3,26 @@ Time complexity analysis
 Insert bid:
     n is the size of the order book. The bids are sorted in a binary heap so when a new bid is
     inserted the insert method puts it in the end of the binary heap and then calls the bubbleUp
-    method. The bubble up function calls the swap method until (worst case scenario) the bid has
+    method. The bubbleUp function calls the swap method until (worst case scenario) the bid has
     reached the root. A full binary tree has the height h = log_2(l)+1 where l is the
     amount of leaves. The size n = 2*l-1. This makes the time complexity O(log_2((n+2)/2)) =
     O(log_2(n))
 
 
-Genomförande av ett köp:
+Transactions:
     sdasdsd
     asdas
     dasdasdasdasd
     asdasd
+
+    When a transaction is made the first element in the sellPriorityQueue and buyPriorityQueue
+    matches and therefore should be removed and printed out. The removeFirst method is called
+    which calls the removeElement method with the index 0 as an input argument. This method
+    swaps the last and [index=0] element and then calls bubbleDown to put it in the correct
+    position in the binary heap. The bubbleDown method has the same principle as the bubbleUp
+    method and therefore the time complexity is O(log_2(n))
+
+
 
 Ändring av bud:
     sadsdasdasdasd
