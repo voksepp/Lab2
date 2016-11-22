@@ -18,7 +18,6 @@ public class Lab2 {
         SellComparator sellComparator = new SellComparator();
         PriorityQueue<Bid> buyPriorityQueue = new PriorityQueue<>(buyComparator);
         PriorityQueue<Bid> sellPriorityQueue = new PriorityQueue<>(sellComparator);
-
         Map<String, Bid> bidMap = new HashMap<>();
 
         for (Bid b: bids){
