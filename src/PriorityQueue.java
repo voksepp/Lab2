@@ -161,6 +161,11 @@ public class PriorityQueue<E> {
             return "";
         return elements.substring(0, elements.length() - 2);
     }
+
+    /**
+     *
+     * @return the size of the priority queue
+     */
     public int size() {
         return binaryHeap.size();
     }
