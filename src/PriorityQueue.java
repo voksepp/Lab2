@@ -33,7 +33,7 @@ class PriorityQueue<E> {
     }
 
     /**
-     * Replaces....
+     * Replaces //TODO: skriv
      *
      * @param o the element that is to be removed
      * @param n the element that is to replace the old element
@@ -44,7 +44,7 @@ class PriorityQueue<E> {
         insert(n);
     }
 
-    /**
+    /** //TODO:SKRIV
      * @param index is the index of the bid that should be bubbled up
      */
     private void bubbleUp(int index) { // time complexity log(n)
@@ -54,7 +54,7 @@ class PriorityQueue<E> {
         }
     }
 
-    /**
+    /** //TODO:SKRIV
      * @param i is the index of the bid that should be bubbled down
      */
     private void bubbleDown(int i) {
