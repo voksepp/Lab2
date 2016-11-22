@@ -1,0 +1,20 @@
+Time complexity analasys
+
+Insert bid:
+    sodkwdokweokwoekw
+    ewe¨wewewew
+    ewewe
+
+
+Genomförande av ett köp:
+    sdasdsd
+    asdas
+    dasdasdasdasd
+    asdasd
+
+Ändring av bud:
+    sadsdasdasdasd
+    asdasdasd
+    asdasd
+
+Ni ska också ange vad den asymptotiska komplexiteten för att skriva ut prioritetsköerna är och motivera detta.
