@@ -13,7 +13,7 @@ public class Lab2 {
      *
      * @param bids List of bids
      */
-    public static void trade(List<Bid> bids) {
+    private static void trade(List<Bid> bids) {
         BuyComparator buyComparator = new BuyComparator();
         SellComparator sellComparator = new SellComparator();
         PriorityQueue<Bid> buyPriorityQueue = new PriorityQueue<>(buyComparator);
@@ -80,7 +80,7 @@ public class Lab2 {
      * @throws MalformedBid If the bid cannot be parsed.
      */
 
-    public static Bid parseBid(String s) throws MalformedBid {
+    private static Bid parseBid(String s) throws MalformedBid {
         Matcher m = Pattern.compile(
                 "\\s*(\\S+)\\s+" +
                         "(?:(K|S)\\s+(\\d+)|(NS|NK)\\s+(\\d+)\\s+(\\d+))" +
@@ -112,7 +112,7 @@ public class Lab2 {
      * @throws MalformedBid If some bid couldn't be parsed.
      */
 
-    public static List<Bid> parseBids(Readable input) throws MalformedBid {
+    private static List<Bid> parseBids(Readable input) throws MalformedBid {
         ArrayList<Bid> bids = new ArrayList<>();
         Scanner s = new Scanner(input);
 
@@ -127,7 +127,7 @@ public class Lab2 {
      * Exception class for malformed bids.
      */
 
-    public static class MalformedBid extends Exception {
+    private static class MalformedBid extends Exception {
         MalformedBid(String bid) {
             super("Malformed bid: " + bid + ".");
         }
@@ -137,7 +137,7 @@ public class Lab2 {
      * Prints usage info.
      */
 
-    public static void usageInfo() {
+    private static void usageInfo() {
         System.err.println("Usage: java Aktiehandel [<file>]");
         System.err.println("If no file is given, then input is " +
                 "read from standard input.");
