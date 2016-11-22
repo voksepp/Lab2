@@ -76,14 +76,14 @@ class PriorityQueue<E> {
         }
     }
 
-    /**
+    /** TODO:SKRIV
      * @return calls the removeElement method with index 0 as input parameter
      */
     E removeFirst() {
         return removeElement(0);
     }
 
-    /**
+    /** TODO:SKRIV
      * @param i is the index of the bid that is to be removed
      * @return returns a generic Element E
      */
@@ -94,7 +94,7 @@ class PriorityQueue<E> {
         return temp;
     }
 
-    /**
+    /** TODO:SKRIV
      * @param i1 the first index
      * @param i2 the second index
      */
@@ -109,7 +109,7 @@ class PriorityQueue<E> {
         binaryHeap.set(i2, e1);
     }
 
-    /**
+    /** TODO:SKRIV
      * @param i index of child
      * @return index of parent
      */
@@ -117,7 +117,7 @@ class PriorityQueue<E> {
         return (i - 1) / 2;
     }
 
-    /**
+    /** TODO:SKRIV
      * @param i index of parent
      * @return index of the left child
      */
@@ -128,7 +128,7 @@ class PriorityQueue<E> {
         else return -1;
     }
 
-    /**
+    /** TODO:SKRIV
      * @param i index of parent
      * @return index of the right child
      */
