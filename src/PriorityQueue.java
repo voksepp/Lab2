@@ -2,7 +2,7 @@ import java.util.*;
 
 /**
  *
- * @param <E>
+ * @param <E> This class can take a generic type E
  */
 public class PriorityQueue<E> {
 
