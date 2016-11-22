@@ -54,7 +54,7 @@ public class PriorityQueue<E> {
      *
      * @param i
      */
-    private void heapify(int i) {
+    private void bubbleDown(int i) {
         int left = leftChild(i);
         int right = rightChild(i);
         int min;
@@ -69,7 +69,7 @@ public class PriorityQueue<E> {
 
         if (min != i) {
             swap(i, min);
-            heapify(min);
+            bubbleDown(min);
         }
     }
 
@@ -89,7 +89,7 @@ public class PriorityQueue<E> {
     private E removeElement(int i){
         swap (i, binaryHeap.size()-1);
         E temp = binaryHeap.remove(binaryHeap.size()-1);
-        heapify(i);
+        bubbleDown(i);
         return temp;
     }
 
@@ -161,7 +161,12 @@ public class PriorityQueue<E> {
             return "";
         return elements.substring(0, elements.length() - 2);
     }
-    public int getSize () {
+
+    /**
+     *
+     * @return the size of the priority queue
+     */
+    public int size() {
         return binaryHeap.size();
     }
 }
