@@ -9,16 +9,13 @@ Insert bid:
     O(log_2(n))
 
 
-Genomförande av ett köp:
+One trade: O(log n)
     sdasdsd
     asdas
     dasdasdasdasd
     asdasd
 
-Ändring av bud:
-    sadsdasdasdasd
-    asdasdasd
-    asdasd
+Modifying a bid: O(log n)
+    When a bid is modified
 
-Ni ska också ange vad den asymptotiska komplexiteten för att
-skriva ut prioritetsköerna är och motivera detta.
+Printing the order book: O(XXX)
