@@ -1,4 +1,4 @@
-Time complexity analasys
+Time complexity analysis
 
 Insert bid:
     sodkwdokweokwoekw
