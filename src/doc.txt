@@ -17,13 +17,6 @@ Transactions:
     position in the binary heap. The bubbleDown method has the same principle as the bubbleUp
     method and therefore the time complexity is O(log_2(n))
 
-
-
-Ändring av bud:
-    sadsdasdasdasd
-    asdasdasd
-    asdasd
-
 Modifying a bid: < O(log n) >
     1.  Old bid is modified with the new value: O(1)
     2.  Priority queue replace method is called with the old bid and the new
