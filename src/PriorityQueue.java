@@ -34,7 +34,7 @@ public class PriorityQueue<E> {
      * @param n the element that is to replace the old element
      */
     public void replace(E o, E n){
-        int i = binaryHeap.indexOf(o);
+        int i = placeMap.get(o);
         removeElement(i);
         insert(n);
     }
