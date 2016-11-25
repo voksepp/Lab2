@@ -60,7 +60,7 @@ public class Lab2 {
             }
         }
 
-        printOrderBook(buyPriorityQueue, sellPriorityQueue);
+        printOrderBook(buyPriorityQueue, sellPriorityQueue, buyComparator, sellComparator);
     }
 
     /**
@@ -69,10 +69,33 @@ public class Lab2 {
      * @param buyQueue  Priority queue of buyer bids
      * @param sellQueue Priority queue of seller bids
      */
-    private static void printOrderBook(PriorityQueue<Bid> buyQueue, PriorityQueue<Bid> sellQueue) {
+    private static void printOrderBook(PriorityQueue<Bid> buyQueue, PriorityQueue<Bid> sellQueue, BuyComparator buyComparator, SellComparator sellComparator) {
+        ArrayList<Bid> buyList = buyQueue.getBinaryHeap();
+        ArrayList<Bid> sellList = sellQueue.getBinaryHeap();
+        Collections.sort(buyList, buyComparator);
+        Collections.sort(sellList, sellComparator);
+        String sellers = "";
+        String buyers = "";
+
+        for (Bid b : buyList){
+            buyers = buyers + b.toString();
+        }
+        for (Bid b : sellList){
+            sellers = sellers + b.toString();
+        }
+
+        if(buyers.length() <= 2)
+            buyers = "";
+        else
+            buyers = buyers.substring(0, buyers.length()-2);
+        if (sellers.length() <= 2)
+            buyers = "";
+        else
+            sellers = sellers.substring(0, sellers.length()-2);
+
         System.out.println("Orderbok:");
-        System.out.println("Säljare: " + sellQueue.printAndDestroyQueue());
-        System.out.println("Köpare: " + buyQueue.printAndDestroyQueue());
+        System.out.println("Säljare: " + sellers);
+        System.out.println("Köpare: " + buyers);
     }
 
     /**

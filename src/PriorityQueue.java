@@ -172,4 +172,8 @@ class PriorityQueue<E> {
     int size() {
         return binaryHeap.size();
     }
+
+    ArrayList<E> getBinaryHeap(){
+        return binaryHeap;
+    }
 }
