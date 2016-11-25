@@ -155,9 +155,7 @@ class PriorityQueue<E> {
      * Returns a string containing all elements in the queue in order of priority
      * @return A string representation of all elements in the queue
      */
-
-    @Override
-    public String toString() {
+    public String printAndDestroyQueue() {
         String elements = "";
 
         while (binaryHeap.size() > 0)

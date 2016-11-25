@@ -75,8 +75,8 @@ public class Lab2 {
 
 
         System.out.println("Orderbok:");
-        System.out.println("Säljare: " + sellQueue2.toString());
-        System.out.println("Köpare: " + buyQueue2.toString());
+        System.out.println("Säljare: " + sellQueue2.printAndDestroyQueue());
+        System.out.println("Köpare: " + buyQueue2.printAndDestroyQueue());
     }
 
     /**
