@@ -27,6 +27,5 @@ Modifying a bid: < O(log_2 (n)) >
                     (similar to above).
             2c.     The new bid is inserted, calls the bubbleUp method: O(log n).
 
-Printing the order book: < O(log_2(n)) >
-    This is very similar to the trade above, the removeFirst method is used
-    in the same way, and therefore the time complexity is also the same.
+Printing the order book: < O(n) >
+    This ... and therefore the time complexity is O(n).
