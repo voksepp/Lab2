@@ -70,7 +70,6 @@ public class Lab2 {
      * @param sellQueue Priority queue of seller bids
      */
     private static void printOrderBook(PriorityQueue<Bid> buyQueue, PriorityQueue<Bid> sellQueue) {
-
         System.out.println("Orderbok:");
         System.out.println("Säljare: " + sellQueue.printAndDestroyQueue());
         System.out.println("Köpare: " + buyQueue.printAndDestroyQueue());
