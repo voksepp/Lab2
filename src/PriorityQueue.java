@@ -31,7 +31,6 @@ class PriorityQueue<E> {
         placeMap.put(e, binaryHeap.size()-1);
         bubbleUp(placeMap.get(e));
     }
-
     /**
      * Replaces an element in the list with another.
      *
