@@ -6,6 +6,6 @@ import java.util.Comparator;
 class SellComparator implements Comparator<Bid>{
 
     public int compare(Bid a, Bid b) {
-        return b.getValue()-a.getValue();
+        return a.getValue()-b.getValue();
     }
 }
