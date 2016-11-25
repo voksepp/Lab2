@@ -62,12 +62,13 @@ public class Lab2 {
 
         printOrderBook(buyPriorityQueue, sellPriorityQueue, buyComparator, sellComparator);
     }
-
     /**
      * Prints the order book of remaining bids
      *
      * @param buyQueue  Priority queue of buyer bids
      * @param sellQueue Priority queue of seller bids
+     * @param buyComparator Comparator used for the buyer priority queue
+     * @param sellComparator Comparator used for the seller priority queue
      */
     private static void printOrderBook(PriorityQueue<Bid> buyQueue, PriorityQueue<Bid> sellQueue, BuyComparator buyComparator, SellComparator sellComparator) {
         ArrayList<Bid> buyList = buyQueue.getBinaryHeap();
