@@ -152,21 +152,6 @@ class PriorityQueue<E> {
     }
 
     /**
-     * Returns a string containing all elements in the queue in order of priority
-     * @return A string representation of all elements in the queue
-     */
-    public String printAndDestroyQueue() {
-        String elements = "";
-
-        while (binaryHeap.size() > 0)
-            elements = elements + removeFirst().toString();
-
-        if (elements.length() <= 2)
-            return "";
-        return elements.substring(0, elements.length() - 2);
-    }
-
-    /**
      * @return the size of the priority queue
      */
     int size() {
