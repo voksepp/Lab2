@@ -90,7 +90,7 @@ public class Lab2 {
         else
             buyers = buyers.substring(0, buyers.length()-2);
         if (sellers.length() <= 2)
-            buyers = "";
+            sellers = "";
         else
             sellers = sellers.substring(0, sellers.length()-2);
 
