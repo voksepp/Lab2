@@ -73,8 +73,8 @@ public class Lab2 {
     private static void printOrderBook(PriorityQueue<Bid> buyQueue, PriorityQueue<Bid> sellQueue, BuyComparator buyComparator, SellComparator sellComparator) {
         ArrayList<Bid> buyList = buyQueue.getBinaryHeap();
         ArrayList<Bid> sellList = sellQueue.getBinaryHeap();
-        Collections.sort(buyList, buyComparator);
-        Collections.sort(sellList, sellComparator);
+        Collections.sort(buyList, sellComparator);
+        Collections.sort(sellList, buyComparator);
         String sellers = "";
         String buyers = "";
 
