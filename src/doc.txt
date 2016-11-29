@@ -27,5 +27,7 @@ Modifying a bid: < O(log_2 (n)) >
                     (similar to above).
             2c.     The new bid is inserted, calls the bubbleUp method: O(log n).
 
-Printing the order book: < O(n) >
-    This method goes through every bid in each list and therefore the time complexity is O(n).
+Printing the order book: < O(n*log(n)) >
+    This method uses the Collections.sort method which uses the merge sort algorithm. The merge
+    sort algorithm has a time complexity of n*log(n) and therefore the time complexity of printing
+    the order book is O(n*log(n)).
